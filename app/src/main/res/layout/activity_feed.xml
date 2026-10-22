@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/feed_root" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#191A1E" tools:context=".feed.FeedActivity">
+  <androidx.core.widget.NestedScrollView android:id="@+id/feed_scroll" android:layout_width="0dp" android:layout_height="0dp" android:fillViewport="true" android:clipToPadding="false" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toTopOf="@id/feed_nav" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingHorizontal="28dp" android:paddingTop="20dp" android:paddingBottom="32dp">
+      <ImageButton android:id="@+id/feed_back" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginStart="-12dp" android:background="?attr/selectableItemBackgroundBorderless" android:src="@drawable/ic_voltar" android:contentDescription="@string/feed_back" />
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
+        <ImageView android:layout_width="58dp" android:layout_height="58dp" android:padding="5dp" android:background="@drawable/bg_avatar" android:src="@drawable/ic_pessoa" android:importantForAccessibility="no" app:tint="#666666" />
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="8dp">
+          <TextView style="@style/FeedText" android:text="@string/feed_greeting" android:textSize="12sp" />
+          <TextView style="@style/FeedTitle" android:layout_width="175dp" android:text="@string/feed_name" android:textSize="18sp" />
+        </LinearLayout>
+      </LinearLayout>
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="26dp" android:padding="20dp" android:background="@drawable/feed_panel" android:orientation="vertical">
+        <TextView style="@style/FeedText" android:text="@string/feed_today" android:textColor="#929297" />
+        <TextView style="@style/FeedTitle" android:layout_marginTop="6dp" android:text="@string/feed_workout" android:textSize="25sp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="horizontal">
+          <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center_horizontal" android:orientation="vertical">
+            <TextView style="@style/FeedTitle" android:text="@string/feed_exercises" />
+            <TextView style="@style/FeedText" android:text="@string/feed_exercise_label" android:textColor="#929297" />
+          </LinearLayout>
+          <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView style="@style/FeedTitle" android:text="@string/feed_duration" />
+            <TextView style="@style/FeedText" android:text="@string/feed_duration_label" android:textColor="#929297" />
+          </LinearLayout>
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/feed_start" style="@style/FeedButton" android:layout_marginTop="24dp" android:text="@string/feed_start" />
+      </LinearLayout>
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:orientation="horizontal">
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="100dp" android:layout_marginEnd="20dp" android:padding="16dp" android:background="@drawable/feed_panel" android:orientation="vertical">
+          <TextView style="@style/FeedTitle" android:text="@string/feed_week_count" android:textSize="20sp" />
+          <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_week_label" android:textColor="#929297" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="100dp" android:padding="16dp" android:background="@drawable/feed_panel" android:orientation="vertical">
+          <TextView style="@style/FeedTitle" android:text="@string/feed_time_count" android:textSize="20sp" />
+          <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_time_label" android:textColor="#929297" />
+        </LinearLayout>
+      </LinearLayout>
+      <TextView style="@style/FeedTitle" android:layout_marginTop="16dp" android:text="@string/feed_week" android:textColor="#929297" />
+      <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:scrollbars="none">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+          <TextView style="@style/FeedDay" android:layout_marginEnd="8dp" android:text="S" android:background="@drawable/feed_day_active" android:textColor="#454DFF" />
+          <TextView style="@style/FeedDay" android:layout_marginEnd="8dp" android:text="T" android:background="@drawable/feed_day" android:textColor="#777777" />
+          <TextView style="@style/FeedDay" android:layout_marginEnd="8dp" android:text="Q" android:background="@drawable/feed_day" android:textColor="#FFFFFF" />
+          <TextView style="@style/FeedDay" android:layout_marginEnd="8dp" android:text="Q" android:background="@drawable/feed_day" android:textColor="#777777" />
+          <TextView style="@style/FeedDay" android:layout_marginEnd="8dp" android:text="S" android:background="@drawable/feed_day" android:textColor="#777777" />
+          <TextView style="@style/FeedDay" android:layout_marginEnd="8dp" android:text="S" android:background="@drawable/feed_day" android:textColor="#777777" />
+          <TextView style="@style/FeedDay" android:layout_marginEnd="8dp" android:text="D" android:background="@drawable/feed_day" android:textColor="#777777" />
+        </LinearLayout>
+      </HorizontalScrollView>
+      <TextView style="@style/FeedTitle" android:layout_marginTop="26dp" android:text="@string/feed_recent" />
+      <LinearLayout android:id="@+id/feed_bench_card" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="88dp" android:layout_marginTop="16dp" android:padding="14dp" android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/feed_exercise" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+        <ImageView android:layout_width="58dp" android:layout_height="58dp" android:padding="0dp" android:background="@drawable/feed_photo" android:src="@drawable/feed_supino_maquina" android:importantForAccessibility="no" android:scaleType="fitCenter" android:clipToOutline="true" />
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:orientation="vertical">
+          <TextView style="@style/FeedTitle" android:layout_width="match_parent" android:text="@string/feed_bench" android:textSize="12sp" />
+          <TextView style="@style/FeedText" android:layout_marginTop="6dp" android:paddingHorizontal="10dp" android:paddingVertical="2dp" android:background="@drawable/feed_primary" android:text="@string/feed_sets" android:textSize="10sp" />
+        </LinearLayout>
+        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_chevron" android:importantForAccessibility="no" />
+      </LinearLayout>
+      <LinearLayout android:id="@+id/feed_curl_card" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="88dp" android:layout_marginTop="16dp" android:padding="14dp" android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/feed_exercise" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+        <ImageView android:layout_width="58dp" android:layout_height="58dp" android:padding="0dp" android:background="@drawable/feed_photo" android:src="@drawable/feed_rosca_biceps" android:importantForAccessibility="no" android:scaleType="fitCenter" android:clipToOutline="true" />
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:orientation="vertical">
+          <TextView style="@style/FeedTitle" android:layout_width="match_parent" android:text="@string/feed_curl" android:textSize="12sp" />
+          <TextView style="@style/FeedText" android:layout_marginTop="6dp" android:paddingHorizontal="10dp" android:paddingVertical="2dp" android:background="@drawable/feed_primary" android:text="@string/feed_sets" android:textSize="10sp" />
+        </LinearLayout>
+        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_chevron" android:importantForAccessibility="no" />
+      </LinearLayout>
+      <LinearLayout android:id="@+id/feed_shoulder_card" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="88dp" android:layout_marginTop="16dp" android:padding="14dp" android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/feed_exercise" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground">
+        <ImageView android:layout_width="58dp" android:layout_height="58dp" android:padding="0dp" android:background="@drawable/feed_photo" android:src="@drawable/feed_desenvolvimento_ombros" android:importantForAccessibility="no" android:scaleType="fitCenter" android:clipToOutline="true" />
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:orientation="vertical">
+          <TextView style="@style/FeedTitle" android:layout_width="match_parent" android:text="@string/feed_shoulder" android:textSize="12sp" />
+          <TextView style="@style/FeedText" android:layout_marginTop="6dp" android:paddingHorizontal="10dp" android:paddingVertical="2dp" android:background="@drawable/feed_primary" android:text="@string/feed_sets" android:textSize="10sp" />
+        </LinearLayout>
+        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_chevron" android:importantForAccessibility="no" />
+      </LinearLayout>
+      <TextView style="@style/FeedTitle" android:layout_marginTop="26dp" android:layout_marginBottom="8dp" android:text="@string/feed_classes" />
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="124dp" android:layout_marginTop="20dp" android:padding="12dp" android:orientation="vertical" android:background="@drawable/feed_class">
+        <TextView android:id="@+id/feed_jiu_seats" style="@style/FeedText" android:layout_gravity="end" android:text="Vagas 5" android:textSize="11sp" android:textColor="#444BFF" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+          <ImageView android:layout_width="86dp" android:layout_height="78dp" android:padding="0dp" android:background="@drawable/feed_photo" android:src="@drawable/feed_jiu_jitsu" android:importantForAccessibility="no" android:scaleType="centerCrop" />
+          <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:orientation="vertical">
+            <TextView style="@style/FeedTitle" android:text="@string/feed_jiu" />
+            <TextView style="@style/FeedText" android:text="@string/feed_jiu_teacher" android:textSize="11sp" />
+            <TextView style="@style/FeedText" android:text="@string/feed_jiu_time" android:textSize="11sp" android:textColor="#939398" />
+            <androidx.appcompat.widget.AppCompatButton android:id="@+id/feed_jiu_action" style="@style/FeedButton" android:layout_height="48dp" android:minHeight="0dp" android:layout_marginTop="4dp" android:text="@string/feed_join" android:textSize="11sp" />
+          </LinearLayout>
+        </LinearLayout>
+      </LinearLayout>
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="124dp" android:layout_marginTop="20dp" android:padding="12dp" android:orientation="vertical" android:background="@drawable/feed_class">
+        <TextView android:id="@+id/feed_pilates_seats" style="@style/FeedText" android:layout_gravity="end" android:text="Vagas 3" android:textSize="11sp" android:textColor="#444BFF" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+          <ImageView android:layout_width="86dp" android:layout_height="78dp" android:padding="0dp" android:background="@drawable/feed_photo" android:src="@drawable/feed_pilates" android:importantForAccessibility="no" android:scaleType="centerCrop" />
+          <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:orientation="vertical">
+            <TextView style="@style/FeedTitle" android:text="@string/feed_pilates" />
+            <TextView style="@style/FeedText" android:text="@string/feed_pilates_teacher" android:textSize="11sp" />
+            <TextView style="@style/FeedText" android:text="@string/feed_pilates_time" android:textSize="11sp" android:textColor="#939398" />
+            <androidx.appcompat.widget.AppCompatButton android:id="@+id/feed_pilates_action" style="@style/FeedButton" android:layout_height="48dp" android:minHeight="0dp" android:layout_marginTop="4dp" android:text="@string/feed_leave" android:textSize="11sp" />
+          </LinearLayout>
+        </LinearLayout>
+      </LinearLayout>
+    </LinearLayout>
+  </androidx.core.widget.NestedScrollView>
+  <LinearLayout android:id="@+id/feed_nav" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="72dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="#242528" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+    <LinearLayout android:id="@+id/feed_nav_home" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_home">
+      <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_inicio" android:importantForAccessibility="no" />
+      <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_home" android:textSize="12sp" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/feed_nav_progress" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_progress">
+      <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_progresso" android:importantForAccessibility="no" />
+      <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_progress" android:textSize="12sp" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/feed_nav_chat" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_chat">
+      <ImageView android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/feed_unifor" android:importantForAccessibility="no" android:padding="0dp" android:scaleType="centerCrop" android:background="@drawable/feed_unifor_circle" android:clipToOutline="true" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/feed_nav_training" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_training">
+      <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_treinos" android:importantForAccessibility="no" />
+      <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_training" android:textSize="12sp" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/feed_nav_profile" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_profile">
+      <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_perfil" android:importantForAccessibility="no" />
+      <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_profile" android:textSize="12sp" />
+    </LinearLayout>
+  </LinearLayout>
+  <ImageButton android:id="@+id/feed_font" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginEnd="12dp" android:layout_marginBottom="12dp" android:background="@drawable/bg_fab_fonte" android:padding="10dp" android:src="@drawable/ic_fonte" android:contentDescription="@string/feed_font" app:layout_constraintBottom_toTopOf="@id/feed_nav" app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

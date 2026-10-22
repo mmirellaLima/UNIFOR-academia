@@ -55,7 +55,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="8dp"
             android:maxLines="1"
-            android:text="Lucas Vasconcelo"
+            android:text="Lucas Vasconcelos"
             android:textColor="@android:color/white"
             android:textSize="22sp"
             android:textStyle="bold"
