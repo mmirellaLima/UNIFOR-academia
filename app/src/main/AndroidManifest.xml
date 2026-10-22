@@ -29,6 +29,14 @@
             android:name=".ExercicioSeletActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".ConfiguracoesActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ObjetivosActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

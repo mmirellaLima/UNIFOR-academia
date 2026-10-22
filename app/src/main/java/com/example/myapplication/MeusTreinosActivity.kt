@@ -26,5 +26,11 @@ class MeusTreinosActivity : AppCompatActivity() {
         findViewById<View>(R.id.btnVoltar).setOnClickListener {
             finish()
         }
+        findViewById<View>(R.id.btnPerfil).setOnClickListener {
+            startActivity(
+                Intent(this, ConfiguracoesActivity::class.java)
+                    .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            )
+        }
     }
 }

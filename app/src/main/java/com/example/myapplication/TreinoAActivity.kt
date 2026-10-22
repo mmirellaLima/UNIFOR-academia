@@ -25,6 +25,14 @@ class TreinoAActivity : AppCompatActivity() {
         findViewById<View>(R.id.cardExercicio2).setOnClickListener { abrirExercicio("Rosca bíceps com halteres") }
         findViewById<View>(R.id.cardExercicio3).setOnClickListener { abrirExercicio("Desenvolvimento de ombros") }
         findViewById<View>(R.id.cardConcluido1).setOnClickListener { abrirExercicio("Desenvolvimento de ombros") }
+
+
+        findViewById<View>(R.id.btnPerfil).setOnClickListener {
+            startActivity(
+                Intent(this, ConfiguracoesActivity::class.java)
+                    .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            )
+        }
     }
 
     private fun abrirExercicio(nome: String) {
