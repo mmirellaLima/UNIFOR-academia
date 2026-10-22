@@ -2,6 +2,7 @@
 <resources>
     <color name="fundo">#FF17181D</color>
     <color name="azul_chat_cabecalho">#FF0B3AA8</color>
+    <color name="vermelho_sair">#FFD93A3A</color>
     <color name="azul_cabecalho">#990B3AA8</color>
     <color name="azul_borda">#FF1F45D6</color>
     <color name="azul_selecionado">#FF8FB4FF</color>
