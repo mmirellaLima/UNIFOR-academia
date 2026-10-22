@@ -30,12 +30,9 @@
             android:exported="false" />
 
         <activity
-            android:name=".ConfiguracoesActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".ObjetivosActivity"
-            android:exported="false" />
+            android:name=".ChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
     </application>
 
