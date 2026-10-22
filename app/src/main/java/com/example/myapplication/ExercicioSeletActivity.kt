@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -26,5 +27,9 @@ class ExercicioSeletActivity : AppCompatActivity() {
 
         findViewById<View>(R.id.btnVoltar).setOnClickListener { finish() }
         findViewById<View>(R.id.button2).setOnClickListener { finish() }
+
+        findViewById<View>(R.id.btnChat).setOnClickListener {
+            startActivity(Intent(this, ChatActivity::class.java))
+        }
     }
 }

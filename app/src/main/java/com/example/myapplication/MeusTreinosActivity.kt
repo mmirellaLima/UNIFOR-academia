@@ -26,5 +26,8 @@ class MeusTreinosActivity : AppCompatActivity() {
         findViewById<View>(R.id.btnVoltar).setOnClickListener {
             finish()
         }
+        findViewById<View>(R.id.btnChat).setOnClickListener {
+            startActivity(Intent(this, ChatActivity::class.java))
+        }
     }
 }
