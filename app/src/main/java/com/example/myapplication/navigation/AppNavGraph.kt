@@ -15,14 +15,15 @@ import com.example.myapplication.ui.onboarding.IdadeScreen
 import com.example.myapplication.ui.onboarding.LoginScreen
 import com.example.myapplication.ui.onboarding.OnboardingViewModel
 import com.example.myapplication.ui.onboarding.PesoScreen
+import com.example.myapplication.ui.progresso.ProgressoScreen
 
 @Composable
 fun AppNavGraph(nav: NavHostController = rememberNavController()) {
     val vm: OnboardingViewModel = viewModel() // compartilhado entre todas as telas
 
-    NavHost(navController = nav, startDestination = Routes.APRESENTACAO) {
+    // Para testar a tela nova, deixe Routes.PROGRESSO. Antes de commitar, volte para Routes.APRESENTACAO.
+    NavHost(navController = nav, startDestination = Routes.PROGRESSO) {
 
-        // Tela 01
         composable(Routes.APRESENTACAO) {
             ApresentacaoScreen(
                 onLogin = { nav.navigate(Routes.LOGIN) },
@@ -30,7 +31,6 @@ fun AppNavGraph(nav: NavHostController = rememberNavController()) {
             )
         }
 
-        // Tela 02
         composable(Routes.CADASTRO) {
             CadastroScreen(
                 vm = vm,
@@ -38,7 +38,6 @@ fun AppNavGraph(nav: NavHostController = rememberNavController()) {
             )
         }
 
-        // Tela 03
         composable(Routes.LOGIN) {
             LoginScreen(
                 onEntrar = { nav.navigate(Routes.IDADE) }, // TODO: trocar pela Home quando existir
@@ -46,7 +45,6 @@ fun AppNavGraph(nav: NavHostController = rememberNavController()) {
             )
         }
 
-        // Tela 04
         composable(Routes.IDADE) {
             IdadeScreen(
                 vm = vm,
@@ -55,7 +53,6 @@ fun AppNavGraph(nav: NavHostController = rememberNavController()) {
             )
         }
 
-        // Tela 05
         composable(Routes.PESO) {
             PesoScreen(
                 vm = vm,
@@ -66,6 +63,10 @@ fun AppNavGraph(nav: NavHostController = rememberNavController()) {
 
         composable(Routes.ALTURA) { Placeholder("Tela 06 - Altura") }
         composable(Routes.RECUPERAR_SENHA) { Placeholder("Recuperar senha") }
+
+        composable(Routes.PROGRESSO) {
+            ProgressoScreen(onVoltar = { nav.popBackStack() })
+        }
     }
 }
 
