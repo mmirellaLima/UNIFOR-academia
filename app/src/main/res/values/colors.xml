@@ -12,4 +12,7 @@
     <color name="verde_logo">#FF2EC4B6</color>
     <color name="linha_barra">#FF555555</color>
     <color name="titulo_objetivo">#87B7FF</color>
+    <color name="cinza_borda_caixa">#3A3B42</color>
+    <color name="azul_chip">#1F45D6</color>
+    <color name="cinza_ponto">#8A8A8A</color>
 </resources>

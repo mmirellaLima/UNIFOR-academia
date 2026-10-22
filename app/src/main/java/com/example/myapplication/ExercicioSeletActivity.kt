@@ -1,6 +1,4 @@
-package com.example.academiaunifor
-import com.example.myapplication.R
-
+package com.example.myapplication
 
 import android.os.Bundle
 import android.view.View
@@ -10,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class SupinoMaquinaActivity : AppCompatActivity() {
+class ExercicioSeletActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

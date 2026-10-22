@@ -1,5 +1,4 @@
-package com.example.academiaunifor
-import com.example.myapplication.R
+package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
@@ -29,7 +28,7 @@ class TreinoAActivity : AppCompatActivity() {
     }
 
     private fun abrirExercicio(nome: String) {
-        val intent = Intent(this, SupinoMaquinaActivity::class.java)
+        val intent = Intent(this, ExercicioSeletActivity::class.java)
         intent.putExtra("nome", nome)
         startActivity(intent)
     }
