@@ -34,6 +34,15 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
+        <activity
+            android:name=".ConfiguracoesActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ObjetivosActivity"
+            android:exported="false" />
+
+
     </application>
 
 </manifest>

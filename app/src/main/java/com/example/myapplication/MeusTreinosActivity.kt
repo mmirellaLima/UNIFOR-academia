@@ -29,5 +29,11 @@ class MeusTreinosActivity : AppCompatActivity() {
         findViewById<View>(R.id.btnChat).setOnClickListener {
             startActivity(Intent(this, ChatActivity::class.java))
         }
+        findViewById<View>(R.id.btnPerfil).setOnClickListener {
+            startActivity(
+                Intent(this, ConfiguracoesActivity::class.java)
+                    .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            )
+        }
     }
 }
