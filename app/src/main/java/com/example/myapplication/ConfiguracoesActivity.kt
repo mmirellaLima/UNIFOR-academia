@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.content.Intent
+import com.example.myapplication.questionario2.Questionario2Activity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -25,6 +26,10 @@ class ConfiguracoesActivity : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.btnVoltar).setOnClickListener { finish() }
+
+        findViewById<View>(R.id.btnQuestionario).setOnClickListener {
+            startActivity(Intent(this, Questionario2Activity::class.java))
+        }
 
         findViewById<View>(R.id.btnObjetivos).setOnClickListener {
             startActivity(Intent(this, ObjetivosActivity::class.java))

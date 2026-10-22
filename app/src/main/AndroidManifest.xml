@@ -43,6 +43,16 @@
             android:exported="false" />
 
 
+        <activity android:name=".questionario2.CompletionActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".questionario2.ExperienceActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".questionario2.FrequencyActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".questionario2.HabitsActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".questionario2.InactivityActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".questionario2.InjuryActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".questionario2.PainActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".questionario2.Questionario2Activity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".questionario2.ReasonActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".questionario2.SurgeryActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
