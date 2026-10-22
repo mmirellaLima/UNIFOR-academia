@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/admin_card_background"
+    android:padding="@dimen/admin_card_padding"
+    android:orientation="vertical"
+    android:theme="@style/Theme.MyApplication.Admin">
+    <TextView
+        style="@style/AdminText.Muted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/admin_next_activity" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/admin_title_gap">
+        <TextView
+            style="@style/AdminText.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/admin_functional"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/admin_time"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:maxLines="1"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="16sp"
+            app:autoSizeMaxTextSize="@dimen/admin_title_size"
+            app:autoSizeStepGranularity="1sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_bias="0"
+            android:id="@+id/admin_next_activity_title" />
+        <TextView
+            android:id="@+id/admin_time"
+            style="@style/AdminText.Time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/admin_time_functional"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/admin_next_activity_title"
+            android:layout_marginStart="6dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <include
+        android:id="@+id/admin_stats"
+        layout="@layout/admin_activity_stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/admin_stats_gap" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/admin_action_gap">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/admin_view_activity"
+            style="@style/AdminButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/admin_button_height"
+            android:text="@string/admin_view_activity"
+            android:paddingHorizontal="38dp" />
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/admin_ic_down"
+            android:importantForAccessibility="no" />
+    </FrameLayout>
+</LinearLayout>
