@@ -12,14 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
 
-        <activity
-            android:name=".MeusTreinosActivity"
-            android:exported="true">
+        <activity android:name=".onboarding.IntroActivity" android:theme="@style/Theme.MyApplication.Onboarding" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MeusTreinosActivity" android:exported="false" />
+        <activity android:name=".onboarding.TermosActivity" android:theme="@style/Theme.MyApplication.Onboarding" android:exported="false" />
+        <activity android:name=".onboarding.AlturaActivity" android:theme="@style/Theme.MyApplication.Onboarding" android:exported="false" />
+        <activity android:name=".onboarding.PerfilActivity" android:theme="@style/Theme.MyApplication.Onboarding" android:exported="false" />
 
         <activity
             android:name=".TreinoAActivity"

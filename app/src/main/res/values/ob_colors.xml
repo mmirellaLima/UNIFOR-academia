@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ob_background">#191A1E</color>
+    <color name="ob_white">@android:color/white</color>
+    <color name="ob_primary">#2D238D</color>
+    <color name="ob_accent">#3E46F4</color>
+    <color name="ob_choice">#E7F4FC</color>
+    <color name="ob_geometry">#A4BFFF</color>
+    <color name="ob_color_493fb3">#493FB3</color>
+    <color name="ob_color_c5e2f7">#C5E2F7</color>
+    <color name="ob_color_8e99a8">#8E99A8</color>
+    <color name="ob_text_secondary">#939398</color>
+    <color name="ob_text_accent">@color/titulo_objetivo</color>
+    <color name="ob_border">@color/linha_barra</color>
+    <color name="ob_surface">@color/fundo</color>
+    <color name="ob_header">@color/azul_chat_cabecalho</color>
+    <color name="ob_badge">@color/azul_borda</color>
+    <color name="ob_avatar">@color/cinza_avatar</color>
+    <color name="ob_avatar_icon">@color/cinza_icone_avatar</color>
+    <color name="ob_transparent">@android:color/transparent</color>
+</resources>

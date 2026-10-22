@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ob_back">Voltar</string>
+    <string name="ob_avancar">Avançar</string>
+    <string name="ob_intro_title">Antes de começar,&lt;br&gt;precisamos conhecer&lt;br&gt;um pouco mais sobre&lt;br&gt;&lt;font color="#3E46F4"&gt;você.&lt;/font&gt;</string>
+    <string name="ob_intro_description">Responda algumas perguntas rápidas sobre sua saúde e rotina. Suas respostas são importantes para ajudarmos a tornar seus treinos mais seguros e adequados para você.</string>
+    <string name="ob_termos_title">Para prosseguir, concorde com\nnossos termos</string>
+    <string name="ob_termos_checkbox_text">Declaro que li e compreendi as perguntas acima e respondi com total veracidade. Entendo que, se respondi &lt;font color="#3E46F4"&gt;\"SIM\"&lt;/font&gt; a qualquer questão, devo procurar um médico antes de iniciar qualquer atividade física.</string>
+    <string name="ob_termos_progress_value">50%</string>
+    <string name="ob_altura_title">E qual é a sua altura,\nLucas?</string>
+    <string name="ob_altura_current">1,70 m</string>
+    <string name="ob_altura_selected_value">%1$s m</string>
+    <string name="ob_altura_picker_accessibility">Altura selecionada: %1$s metros. Deslize para cima ou para baixo para alterar.</string>
+    <string name="ob_altura_168">1,68</string>
+    <string name="ob_altura_169">1,69</string>
+    <string name="ob_altura_171">1,71</string>
+    <string name="ob_altura_172">1,72</string>
+    <string name="ob_perfil_name">Lucas Vasconcelo</string>
+    <string name="ob_perfil_birthdate">25/2000</string>
+    <string name="ob_peso_label">Peso</string>
+    <string name="ob_peso_value">65 Kg</string>
+    <string name="ob_altura_label">Altura</string>
+    <string name="ob_altura_value">1.70 m</string>
+    <string name="ob_objetivo_title">Objetivo</string>
+    <string name="ob_objetivo_description">Defina seus objetivos e acompanhe sua evolução.</string>
+    <string name="ob_meus_resultados_title">Meus Resultados</string>
+    <string name="ob_meus_resultados_description">Acompanhe seus resultados e veja o quanto você evoluiu.</string>
+    <string name="ob_meu_treino_title">Meu treino</string>
+    <string name="ob_meu_treino_description">Seu treino personalizado, criado especialmente por um profissional para ajudar você a alcançar seus objetivos.</string>
+    <string name="ob_ver_tudo">Ver tudo</string>
+    <string name="ob_salvar">Salvar</string>
+</resources>
