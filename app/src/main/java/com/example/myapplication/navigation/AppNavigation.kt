@@ -7,6 +7,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.*
 import com.example.myapplication.admin.FeedAdministradorActivity
+import com.example.myapplication.admin.AdminPerfilActivity
+import com.example.myapplication.admin.AdminAgendaActivity
+import com.example.myapplication.admin.AdminWorkoutsActivity
 import com.example.myapplication.feed.FeedActivity
 import com.example.myapplication.onboarding.*
 import com.example.myapplication.questionario2.*
@@ -35,17 +38,18 @@ object AppNavigation {
     fun home(activity: Activity) = open(activity, if (DemoSession(activity).role == AccessRole.ADMIN)
         FeedAdministradorActivity::class.java else FeedActivity::class.java)
     fun progress(activity: Activity) {
-        if (DemoSession(activity).role == AccessRole.ADMIN) pending(activity, PendingDestination.ADMIN_AGENDA)
+        if (DemoSession(activity).role == AccessRole.ADMIN) open(activity, AdminAgendaActivity::class.java)
         else open(activity, ProgressActivity::class.java)
     }
     fun workouts(activity: Activity) {
-        if (DemoSession(activity).role == AccessRole.ADMIN) pending(activity, PendingDestination.ADMIN_WORKOUTS)
+        if (DemoSession(activity).role == AccessRole.ADMIN) open(activity, AdminWorkoutsActivity::class.java)
         else open(activity, MeusTreinosActivity::class.java)
     }
     fun profile(activity: Activity) {
-        if (DemoSession(activity).role == AccessRole.ADMIN) pending(activity, PendingDestination.ADMIN_PROFILE)
+        if (DemoSession(activity).role == AccessRole.ADMIN) open(activity, AdminPerfilActivity::class.java)
         else open(activity, PerfilActivity::class.java)
     }
+    fun goals(activity: Activity) = open(activity, ObjetivosActivity::class.java)
     fun chat(activity: Activity) = open(activity, ChatActivity::class.java)
     fun settings(activity: Activity) {
         if (DemoSession(activity).role == AccessRole.STUDENT) open(activity, ConfiguracoesActivity::class.java)

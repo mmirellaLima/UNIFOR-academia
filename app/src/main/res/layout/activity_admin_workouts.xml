@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/feed_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/admin_background"
+    tools:context=".admin.AdminWorkoutsActivity">
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/admin_workouts_geometry"
+        android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation">
+        <LinearLayout
+            android:id="@+id/screen_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="@dimen/admin_instructor_header_height">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="156dp"
+                    android:layout_gravity="bottom"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:background="@drawable/admin_instructor_header">
+                    <ImageView
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        android:src="@drawable/admin_ic_avatar"
+                        android:importantForAccessibility="no" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:orientation="vertical">
+                        <TextView
+                            style="@style/AdminText.Heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/admin_name"
+                            android:textSize="24sp" />
+                        <TextView
+                            style="@style/AdminText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="@string/admin_instructor" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageButton
+                    android:id="@+id/back_button"
+                    android:layout_width="@dimen/admin_touch_target"
+                    android:layout_height="@dimen/admin_touch_target"
+                    android:layout_marginStart="16dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/admin_back"
+                    android:src="@drawable/ic_voltar" />
+            </FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="72dp"
+                android:paddingHorizontal="32dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/admin_workout_a"
+                    style="@style/AdminText.Heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/admin_workout_row_height"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/admin_workout_background"
+                    android:paddingHorizontal="24dp"
+                    android:gravity="end|center_vertical"
+                    android:text="@string/admin_workout_a"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/admin_workout_b"
+                    style="@style/AdminText.Heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/admin_workout_row_height"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/admin_workout_background"
+                    android:paddingHorizontal="24dp"
+                    android:gravity="end|center_vertical"
+                    android:text="@string/admin_workout_b"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/admin_workout_c"
+                    style="@style/AdminText.Heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/admin_workout_row_height"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/admin_workout_background"
+                    android:paddingHorizontal="24dp"
+                    android:gravity="end|center_vertical"
+                    android:text="@string/admin_workout_c"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/admin_workout_d"
+                    style="@style/AdminText.Heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/admin_workout_row_height"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/admin_workout_background"
+                    android:paddingHorizontal="24dp"
+                    android:gravity="end|center_vertical"
+                    android:text="@string/admin_workout_d"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <ImageButton
+        android:id="@+id/accessibility_action"
+        android:layout_width="@dimen/admin_touch_target"
+        android:layout_height="@dimen/admin_touch_target"
+        android:layout_margin="4dp"
+        android:padding="0dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/admin_text_size_icon"
+        android:contentDescription="@string/admin_resize_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation" />
+    <include
+        android:id="@+id/bottom_navigation"
+        layout="@layout/admin_bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

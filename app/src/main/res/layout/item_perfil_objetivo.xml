@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="84dp"
+    android:layout_height="88dp"
+    android:layout_marginEnd="8dp"
+    android:background="@drawable/bg_card_objetivo_selecionado"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <ImageView
+        android:id="@+id/img_icone_objetivo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/feed_unifor_circle"
+        android:backgroundTint="#D4E6FC"
+        android:padding="4dp"
+        android:src="@drawable/ic_running"
+        android:contentDescription="Objetivo" />
+
+    <TextView
+        android:id="@+id/tv_nome_objetivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="Emagrecimento"
+        android:textColor="#0B3AA8"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+</LinearLayout>

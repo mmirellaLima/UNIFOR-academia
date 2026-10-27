@@ -19,7 +19,7 @@ class DemoSession(context: Context) {
         get() = SetupStep.entries.firstOrNull { it.name == prefs.getString("step", null) } ?: SetupStep.AGE
         set(value) { prefs.edit().putString("step", value.name).apply() }
     var name: String
-        get() = prefs.getString("name", "Lucas Vasconcelos").orEmpty()
+        get() = prefs.getString("name", "Lucas Vasconcelo").orEmpty()
         set(value) { prefs.edit().putString("name", value).apply() }
     var registration: String
         get() = prefs.getString("registration", "2512000").orEmpty()
@@ -28,10 +28,10 @@ class DemoSession(context: Context) {
         get() = prefs.getInt("age", 25)
         set(value) { prefs.edit().putInt("age", value).apply() }
     var weight: Int
-        get() = prefs.getInt("weight", 78)
+        get() = prefs.getInt("weight", 65)
         set(value) { prefs.edit().putInt("weight", value).apply() }
     var height: Int
-        get() = prefs.getInt("height", 175)
+        get() = prefs.getInt("height", 170)
         set(value) { prefs.edit().putInt("height", value).apply() }
     var healthIndex: Int
         get() = prefs.getInt("health_index", 0).coerceIn(0, 9)
@@ -39,6 +39,9 @@ class DemoSession(context: Context) {
     var termsAccepted: Boolean
         get() = prefs.getBoolean("terms", false)
         set(value) { prefs.edit().putBoolean("terms", value).apply() }
+    var objectives: Set<String>
+        get() = prefs.getStringSet("objectives", emptySet()) ?: emptySet()
+        set(value) { prefs.edit().putStringSet("objectives", value).apply() }
 
     fun state() = FlowState(active, role, configured)
     fun beginRegistration(fullName: String, studentId: String) {
@@ -66,10 +69,10 @@ class DemoSession(context: Context) {
         configured = true
     }
     val displayName: String
-        get() = if (role == AccessRole.ADMIN) "Amanda Alves" else if (configured) "Lucas Vasconcelos" else name
+        get() = if (role == AccessRole.ADMIN) "Amanda Alves" else if (configured) "Lucas Vasconcelo" else name
     val displayRegistration: String get() = if (configured) "2512000" else registration
-    val displayWeight: Int get() = if (configured) 78 else weight
-    val displayHeight: Int get() = if (configured) 175 else height
+    val displayWeight: Int get() = if (configured) 65 else weight
+    val displayHeight: Int get() = if (configured) 170 else height
     fun answer(index: Int, retake: Boolean = false): String =
         prefs.getString("${if (retake) "review" else "health"}_$index", "").orEmpty()
     fun saveAnswer(index: Int, value: String, retake: Boolean = false) {

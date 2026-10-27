@@ -1,8 +1,6 @@
 package com.example.myapplication.admin
 
-import com.example.myapplication.R
-import com.example.myapplication.navigation.*
-
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -10,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.example.myapplication.R
+import com.example.myapplication.navigation.*
 
 /** Presentation of the administrator feed and its prototype transitions. */
 class FeedAdministradorActivity : AppCompatActivity() {
@@ -17,6 +17,10 @@ class FeedAdministradorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.admin_activity_feed)
+
+        // Ensure session knows user is in Administrator mode
+        DemoSession(this).enterDemo(AccessRole.ADMIN)
+
         WindowInsetsControllerCompat(window, window.decorView).apply {
             isAppearanceLightStatusBars = false
             isAppearanceLightNavigationBars = false
@@ -48,10 +52,14 @@ class FeedAdministradorActivity : AppCompatActivity() {
             findViewById<androidx.core.widget.NestedScrollView>(R.id.admin_feed_scroll).smoothScrollTo(0, 0)
         }
         findViewById<View>(R.id.admin_nav_chat).setOnClickListener { AppNavigation.chat(this) }
-        findViewById<View>(R.id.admin_nav_training).setOnClickListener { AppNavigation.workouts(this) }
-        findViewById<View>(R.id.admin_nav_profile).setOnClickListener { AppNavigation.profile(this) }
+        findViewById<View>(R.id.admin_nav_training).setOnClickListener {
+            startActivity(Intent(this, AdminWorkoutsActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
+        }
+        findViewById<View>(R.id.admin_nav_profile).setOnClickListener {
+            startActivity(Intent(this, AdminPerfilActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
+        }
         findViewById<View>(R.id.admin_nav_agenda).setOnClickListener {
-            AppNavigation.pending(this, PendingDestination.ADMIN_AGENDA)
+            startActivity(Intent(this, AdminAgendaActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
         }
         findViewById<View>(R.id.admin_accessibility_badge).setOnClickListener {
             AppNavigation.pending(this, PendingDestination.FONT_SIZE)

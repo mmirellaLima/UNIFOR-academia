@@ -195,22 +195,63 @@
                             android:textSize="13sp"
                             android:id="@+id/flow_all_goals" />
                     </RelativeLayout>
-                    <ImageView
-                        android:id="@+id/ob_button_add_objetivo"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="14dp"
-                        android:contentDescription="Adicionar objetivo"
-                        android:src="@drawable/ob_circle_outline_add" />
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/layout_objetivo_vazio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:gravity="center"
-                        android:text="@string/ob_objetivo_description"
-                        android:textColor="@color/ob_text_secondary"
-                        android:textSize="12sp" />
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+                        <ImageView
+                            android:id="@+id/ob_button_add_objetivo"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="14dp"
+                            android:contentDescription="Adicionar objetivo"
+                            android:src="@drawable/ob_circle_outline_add" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/ob_objetivo_description"
+                            android:textColor="@color/ob_text_secondary"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/layout_objetivos_lista"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:visibility="gone">
+                        <HorizontalScrollView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:scrollbars="none">
+                            <LinearLayout
+                                android:id="@+id/container_cards_objetivos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" />
+                        </HorizontalScrollView>
+                        <FrameLayout
+                            android:id="@+id/btn_add_mais_objetivo"
+                            android:layout_width="76dp"
+                            android:layout_height="88dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_card_add_objetivo"
+                            android:clickable="true"
+                            android:focusable="true">
+                            <ImageView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ob_circle_outline_add"
+                                android:contentDescription="Adicionar mais objetivos" />
+                        </FrameLayout>
+                    </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"

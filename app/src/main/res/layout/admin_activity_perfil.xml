@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_profile_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/admin_background">
+
+    <ScrollView
+        android:id="@+id/admin_profile_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- Cabeçalho azul idêntico ao perfil padrão -->
+            <FrameLayout
+                android:id="@+id/admin_profile_header"
+                android:layout_width="match_parent"
+                android:layout_height="305dp"
+                android:background="@drawable/ob_profile_header_bg">
+
+                <com.example.myapplication.onboarding.ProfileBannerBackgroundView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:importantForAccessibility="no" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/admin_back_button"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="32dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/admin_back"
+                        android:src="@drawable/ic_voltar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/admin_button_settings"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Opções da conta"
+                        android:src="@drawable/ob_ic_settings"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <FrameLayout
+                        android:id="@+id/admin_avatar_container"
+                        android:layout_width="122dp"
+                        android:layout_height="122dp"
+                        android:layout_marginTop="38dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/admin_profile_avatar"
+                            android:layout_width="118dp"
+                            android:layout_height="118dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Foto de perfil"
+                            android:src="@drawable/admin_ic_avatar" />
+
+                        <ImageView
+                            android:id="@+id/admin_button_add_avatar"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="bottom|end"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="@drawable/ob_badge_add_avatar"
+                            android:contentDescription="Alterar foto"
+                            android:padding="5dp"
+                            android:src="@drawable/ob_ic_add" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/admin_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/admin_name"
+                        android:textColor="@color/ob_white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/admin_avatar_container" />
+
+                    <TextView
+                        android:id="@+id/admin_user_badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Administrador(a) • CREF 012345-G/CE"
+                        android:textColor="@color/ob_text_accent"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/admin_user_name" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+
+            <!-- Conteúdo Útil para o Administrador -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="16dp">
+
+                <!-- Card de Estatísticas do Administrador -->
+                <LinearLayout
+                    android:id="@+id/admin_card_stats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ob_card_stats_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="14dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Aulas Hoje"
+                            android:textColor="@color/ob_text_accent"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/admin_stat_aulas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="3 Atividades"
+                            android:textColor="@color/ob_white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="36dp"
+                        android:background="@color/ob_border" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Alunos Ativos"
+                            android:textColor="@color/ob_text_accent"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/admin_stat_alunos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="48 Matriculados"
+                            android:textColor="@color/ob_white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Seção 1: Minhas Atividades & Horários -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Minhas Atividades"
+                            android:textColor="@color/ob_white"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/admin_ver_todas_atividades"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="@string/ob_ver_tudo"
+                            android:textColor="@color/ob_text_accent"
+                            android:textSize="13sp" />
+                    </RelativeLayout>
+
+                    <!-- Lista resumida de atividades do instrutor -->
+                    <LinearLayout
+                        android:id="@+id/admin_card_atividade_funcional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/admin_card_background"
+                        android:orientation="horizontal"
+                        android:padding="14dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:background="@drawable/feed_unifor_circle"
+                            android:backgroundTint="#2D238D"
+                            android:padding="6dp"
+                            android:src="@drawable/admin_ic_strength"
+                            android:contentDescription="Atividade" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Aula Funcional • 08h às 09h"
+                                android:textColor="@color/ob_white"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Sala 02 • 15 Alunos matriculados"
+                                android:textColor="@color/ob_text_secondary"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/admin_ic_next"
+                            android:importantForAccessibility="no" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/admin_card_atividade_yoga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/admin_card_background"
+                        android:orientation="horizontal"
+                        android:padding="14dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:background="@drawable/feed_unifor_circle"
+                            android:backgroundTint="#2D238D"
+                            android:padding="6dp"
+                            android:src="@drawable/admin_ic_yoga"
+                            android:contentDescription="Atividade" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Yoga • 14h às 15h"
+                                android:textColor="@color/ob_white"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Espaço Bem-Estar • 13 Alunos"
+                                android:textColor="@color/ob_text_secondary"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/admin_ic_next"
+                            android:importantForAccessibility="no" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Seção 2: Gestão de Alunos & Frequência -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gestão de Alunos"
+                            android:textColor="@color/ob_white"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/admin_ver_todos_alunos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="@string/ob_ver_tudo"
+                            android:textColor="@color/ob_text_accent"
+                            android:textSize="13sp" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/admin_card_gestao_alunos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/admin_card_background"
+                        android:padding="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="48 alunos em acompanhamento regular"
+                            android:textColor="@color/ob_white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:lineSpacingExtra="2dp"
+                            android:text="Acesse a lista completa de alunos, evolução e fichas de treinamento cadastradas para o seu turno."
+                            android:textColor="@color/ob_text_secondary"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Botão de Ação -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/admin_button_salvar"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/ob_btn_salvar_bg"
+                    android:text="Salvar Alterações"
+                    android:textAllCaps="false"
+                    android:textColor="@color/ob_white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Barra de navegação inferior do Administrador com Perfil ativo -->
+    <include
+        android:id="@+id/admin_bottom_navigation"
+        layout="@layout/admin_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

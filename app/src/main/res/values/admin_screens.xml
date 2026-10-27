@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="admin_instructor_blue">#103B9F</color>
+    <string name="admin_tomorrow">Amanhã</string>
+    <string name="admin_instructor">Instrutor</string>
+    <string name="admin_workout_a">Treino A</string>
+    <string name="admin_workout_b">Treino B</string>
+    <string name="admin_workout_c">Treino C</string>
+    <string name="admin_workout_d">Treino D</string>
+    <string name="admin_resize_text">Aumentar ou restaurar tamanho do texto</string>
+    <string name="admin_time_strength_tomorrow">14h - 15h</string>
+    <string name="admin_time_yoga_tomorrow">09h - 10h</string>
+    <string name="admin_students_strength_tomorrow">07</string>
+    <string name="admin_students_yoga_tomorrow">15</string>
+    <string name="admin_capacity_strength_tomorrow">07 / 20 Vagas Preenchidas</string>
+    <string name="admin_capacity_yoga_tomorrow">15 / 20 Vagas Preenchidas</string>
+    <dimen name="admin_instructor_header_height">208dp</dimen>
+    <dimen name="admin_workout_row_height">104dp</dimen>
+</resources>

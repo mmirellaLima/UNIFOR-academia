@@ -89,5 +89,20 @@
         <activity
             android:name=".questionario2.SurgeryActivity"
             android:exported="false" />
+            <activity
+            android:name=".ObjetivosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminPerfilActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.Admin" />
+            <activity
+            android:name=".admin.AdminAgendaActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.Admin" />
+        <activity
+            android:name=".admin.AdminWorkoutsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication.Admin" />
     </application>
 </manifest>

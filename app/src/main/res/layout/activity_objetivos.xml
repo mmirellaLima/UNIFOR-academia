@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/objetivos"
+    android:id="@+id/objetivos_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fundo"
     tools:context=".ObjetivosActivity">
-
 
     <ImageView
         android:id="@+id/imgFundo"
@@ -18,242 +18,206 @@
         android:src="@drawable/meus_treinos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/btnVoltar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="26dp"
-        android:background="@drawable/bg_voltar"
-        android:backgroundTint="@color/fundo"
+        android:layout_marginTop="28dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Voltar"
         android:padding="8dp"
         android:src="@drawable/ic_voltar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnTreinoB"
-        android:layout_width="0dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/bg_botao_treino"
-        android:gravity="center_vertical|end"
-        android:paddingEnd="28dp"
-        android:text="Treino B"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnTreinoA" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnTreinoA2"
-        android:layout_width="0dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/bg_botao_treino"
-        android:gravity="center_vertical|end"
-        android:paddingEnd="28dp"
-        android:text="Treino A"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnTreinoA"
-        android:layout_width="0dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/bg_botao_treino"
-        android:gravity="center_vertical|end"
-        android:paddingEnd="28dp"
-        android:text="Treino A"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnTreinoA2" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnTreinoC"
-        android:layout_width="0dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/bg_botao_treino"
-        android:gravity="center_vertical|end"
-        android:paddingEnd="28dp"
-        android:text="Treino C"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnTreinoB" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvTituloObjetivos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="Quais os seus Objetivos:"
+        android:layout_marginTop="34dp"
+        android:text="Quais os seus objetivos:"
         android:textColor="@color/titulo_objetivo"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgFundo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/linhaBarra"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollObjetivos"
         android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/linha_barra"
-        app:layout_constraintBottom_toTopOf="@id/barraInferior"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:fillViewport="true"
+        android:paddingHorizontal="32dp"
+        app:layout_constraintBottom_toTopOf="@id/layoutBotoes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloObjetivos">
 
+        <LinearLayout
+            android:id="@+id/containerOpcoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/optEmagrecimento"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_objetivo_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="Emagrecimento"
+                android:textColor="@color/ob_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/optHipertrofia"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_objetivo_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="Hipertrofia Muscular"
+                android:textColor="@color/ob_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/optCondicionamento"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_objetivo_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="Condicionamento"
+                android:textColor="@color/ob_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/optTerapeutico"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_objetivo_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="Terapêutico"
+                android:textColor="@color/ob_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/optConvivio"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_objetivo_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="Convívio Social"
+                android:textColor="@color/ob_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/optOutros"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_objetivo_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="Outros"
+                android:textColor="@color/ob_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/optLazer"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_objetivo_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="Lazer"
+                android:textColor="@color/ob_white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
-        android:id="@+id/barraInferior"
+        android:id="@+id/layoutBotoes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/fundo"
-        android:gravity="center_vertical"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:paddingVertical="8dp"
+        android:paddingHorizontal="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAcessibilidade"
         app:layout_constraintStart_toStartOf="parent">
 
-        <LinearLayout
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAcaoVoltar"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginEnd="12dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:background="@drawable/ob_btn_voltar_bg"
+            android:text="Voltar"
+            android:textAllCaps="false"
+            android:textColor="@color/preto_voltar"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription="Início"
-                android:src="@drawable/ic_inicio"
-                app:tint="@android:color/white" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Início"
-                android:textColor="@android:color/white"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <LinearLayout
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSalvarObjetivos"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription="Progresso"
-                android:src="@drawable/ic_progresso"
-                app:tint="@android:color/white" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Progresso"
-                android:textColor="@android:color/white"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/btnChat"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@drawable/bg_logo"
-            android:contentDescription="Logo"
-            android:padding="16dp"
-            android:src="@drawable/logo_unifor_ia"
-            app:tint="@android:color/white" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription="Treinos"
-                android:src="@drawable/ic_treinos"
-                app:tint="@color/azul_selecionado" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Treinos"
-                android:textColor="@color/azul_selecionado"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <LinearLayout android:id="@+id/btnPerfil"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription="Perfil"
-                android:src="@drawable/ic_perfil"
-                app:tint="@android:color/white" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Perfil"
-                android:textColor="@android:color/white"
-                android:textSize="12sp" />
-        </LinearLayout>
+            android:background="@drawable/ob_btn_salvar_bg"
+            android:text="Salvar"
+            android:textAllCaps="false"
+            android:textColor="@color/ob_white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/btnAcessibilidade"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/admin_accessibility_background"
+        android:contentDescription="Tamanho da fonte"
+        android:padding="6dp"
+        android:src="@drawable/ic_fonte"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+</androidx.constraintlayout.widget.ConstraintLayout>
