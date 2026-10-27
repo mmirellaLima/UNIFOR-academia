@@ -104,5 +104,18 @@
             android:name=".admin.AdminWorkoutsActivity"
             android:exported="false"
             android:theme="@style/Theme.MyApplication.Admin" />
+    
+        <activity
+            android:name=".TreinoAActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ExercicioSeletActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RecuperarSenhaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 </manifest>

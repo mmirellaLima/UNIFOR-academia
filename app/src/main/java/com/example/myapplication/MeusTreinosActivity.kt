@@ -25,7 +25,7 @@ class MeusTreinosActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvMatricula).text = session.displayRegistration
         listOf(R.id.btnTreinoA to "A", R.id.btnTreinoB to "B", R.id.btnTreinoC to "C").forEach { (id, letter) ->
             findViewById<View>(id).setOnClickListener {
-                AppNavigation.pending(this, PendingDestination.WORKOUT, "Treino $letter")
+                AppNavigation.workout(this, "Treino $letter")
             }
         }
         findViewById<View>(R.id.btnVoltar).setOnClickListener { onBackPressedDispatcher.onBackPressed() }

@@ -35,6 +35,15 @@ object AppNavigation {
         activity.startActivity(Intent(activity, PendingActivity::class.java)
             .putExtra("destination", destination.name).putExtra("selection", selection))
     }
+    fun workout(activity: Activity, name: String? = null) {
+        activity.startActivity(Intent(activity, TreinoAActivity::class.java).putExtra("treino", name))
+    }
+    fun exercise(activity: Activity, name: String? = null) {
+        activity.startActivity(Intent(activity, ExercicioSeletActivity::class.java).putExtra("nome", name))
+    }
+    fun recovery(activity: Activity) {
+        activity.startActivity(Intent(activity, RecuperarSenhaActivity::class.java))
+    }
     fun home(activity: Activity) = open(activity, if (DemoSession(activity).role == AccessRole.ADMIN)
         FeedAdministradorActivity::class.java else FeedActivity::class.java)
     fun progress(activity: Activity) {
