@@ -1,0 +1,10 @@
+<resources>
+    <style name="FeedText"><item name="android:layout_width">wrap_content</item><item name="android:layout_height">wrap_content</item><item name="android:textColor">#FFFFFF</item><item name="android:textSize">14sp</item><item name="android:fontFamily">sans-serif</item></style>
+    <style
+        name="FeedTitle"
+        parent="FeedText"><item name="android:textStyle">bold</item><item name="android:textSize">16sp</item></style>
+    <style name="FeedButton"><item name="android:layout_width">match_parent</item><item name="android:layout_height">48dp</item><item name="android:textColor">#FFFFFF</item><item name="android:textAllCaps">false</item><item name="android:textStyle">bold</item><item name="android:background">@drawable/feed_primary</item><item name="backgroundTint">#3E46F4</item></style>
+    <style
+        name="FeedDay"
+        parent="FeedText"><item name="android:layout_width">36dp</item><item name="android:layout_height">36dp</item><item name="android:gravity">center</item><item name="android:textSize">20sp</item><item name="android:textColor">#777777</item><item name="android:background">@drawable/feed_day</item></style>
+</resources>

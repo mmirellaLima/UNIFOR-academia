@@ -36,6 +36,7 @@ class ExercicioSeletActivity : AppCompatActivity() {
             startActivity(
                 Intent(this, ConfiguracoesActivity::class.java)
                     .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            )
         }
     }
 }

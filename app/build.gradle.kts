@@ -1,8 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
+    buildFeatures { compose = true }
     namespace = "com.example.myapplication"
     compileSdk {
         version = release(37)
@@ -33,6 +35,14 @@ android {
 }
 
 dependencies {
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.ui)
+    implementation(libs.compose.preview)
+    implementation(libs.compose.material3)
+    implementation(libs.compose.icons)
+    implementation(libs.activity.compose)
+    implementation(libs.viewmodel.compose)
+    debugImplementation(libs.compose.tooling)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)

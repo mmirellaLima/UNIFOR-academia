@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/admin_card_background"
+    android:fillViewport="false"
+    android:scrollbars="none"
+    android:theme="@style/Theme.MyApplication.Admin">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/admin_card_padding">
+        <TextView
+            android:id="@+id/admin_heading"
+            style="@style/AdminText.Muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/admin_next_activity" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/admin_detail_gap">
+            <TextView
+                style="@style/AdminText.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:padding="0dp"
+                android:background="@null"
+                android:textColorHint="@color/admin_text_secondary"
+                android:maxLines="1"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/admin_time"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="Aula Funcional"
+                android:textSize="@dimen/admin_title_size"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="16sp"
+                app:autoSizeMaxTextSize="@dimen/admin_title_size"
+                android:id="@+id/admin_activity_title"
+                android:text="@string/admin_functional"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintHorizontal_bias="0" />
+            <EditText
+                android:id="@+id/admin_title"
+                style="@style/AdminText.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:minHeight="32dp"
+                android:padding="0dp"
+                android:background="@null"
+                android:hint="@string/admin_title_hint"
+                android:textColorHint="@color/admin_text_secondary"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:scrollHorizontally="false"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:selectAllOnFocus="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/admin_time"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="Aula Funcional"
+                android:textSize="@dimen/admin_title_size"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="16sp"
+                app:autoSizeMaxTextSize="@dimen/admin_title_size"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constrainedWidth="true"
+                android:drawablePadding="6dp"
+                android:visibility="gone"
+                app:layout_constraintHorizontal_chainStyle="packed" />
+            <TextView
+                android:id="@+id/admin_time"
+                style="@style/AdminText.Time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/admin_time_functional"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/admin_activity_title"
+                android:layout_marginStart="6dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <include
+            android:id="@+id/admin_stats"
+            layout="@layout/admin_activity_stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/admin_detail_gap" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/admin_detail_gap"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                style="@style/AdminText.Heading"
+                android:textSize="@dimen/admin_activity_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/admin_teacher_label"
+                android:labelFor="@id/admin_teacher_selector" />
+            <TextView
+                android:id="@+id/admin_teacher_selector"
+                style="@style/AdminSelector"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/admin_selector_height"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/admin_substitute_teacher" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/admin_teacher"
+            style="@style/AdminText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="9sp"
+            android:text="@string/admin_teacher_lorena" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/admin_detail_gap"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                style="@style/AdminText.Heading"
+                android:textSize="@dimen/admin_activity_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/admin_capacity_label"
+                android:labelFor="@id/admin_capacity_selector" />
+            <TextView
+                android:id="@+id/admin_capacity_selector"
+                style="@style/AdminSelector"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/admin_selector_height"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/admin_choose_capacity"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/admin_capacity"
+            style="@style/AdminText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textSize="9sp"
+            android:text="@string/admin_capacity_functional" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                style="@style/AdminText.Heading"
+                android:textSize="@dimen/admin_activity_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/admin_status_label"
+                android:labelFor="@id/admin_status_selector" />
+            <TextView
+                android:id="@+id/admin_status_selector"
+                style="@style/AdminSelector"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/admin_selector_height"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/admin_status_scheduled" />
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/admin_cancel"
+            style="@style/AdminButton.Danger"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/admin_cancel_height"
+            android:layout_marginTop="@dimen/admin_detail_gap"
+            android:text="@string/admin_cancel_activity" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/admin_detail_gap">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/admin_primary_action"
+                style="@style/AdminButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/admin_button_height"
+                android:paddingHorizontal="32dp"
+                android:text="@string/admin_collapse_activity" />
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/admin_ic_up"
+                android:importantForAccessibility="no" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

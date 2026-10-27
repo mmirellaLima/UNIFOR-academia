@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/feed_class"
+    android:fillViewport="false">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="20dp">
+    <TextView
+        android:id="@+id/feed_enrollment_title"
+        style="@style/FeedTitle"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text="@string/feed_confirm_enrollment"
+        android:textSize="16sp"
+        android:accessibilityHeading="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+      <ImageView
+          android:layout_width="78dp"
+          android:layout_height="78dp"
+          android:padding="0dp"
+          android:background="@drawable/feed_photo"
+          android:src="@drawable/feed_jiu_jitsu"
+          android:importantForAccessibility="no"
+          android:scaleType="centerCrop"
+          android:id="@+id/feed_enrollment_photo" />
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="12dp"
+          android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+          <TextView
+              android:id="@+id/feed_enrollment_class"
+              style="@style/FeedTitle"
+              android:layout_width="0dp"
+              android:layout_weight="1" />
+          <ImageView
+              android:id="@+id/feed_enrollment_check"
+              android:layout_width="20dp"
+              android:layout_height="20dp"
+              android:layout_marginStart="6dp"
+              android:visibility="gone"
+              android:src="@drawable/feed_enrolled_check"
+              android:contentDescription="@string/feed_enrolled" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/feed_enrollment_teacher"
+            style="@style/FeedText"
+            android:layout_width="match_parent"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/feed_enrollment_time"
+            style="@style/FeedText"
+            android:layout_width="match_parent"
+            android:textSize="12sp"
+            android:textColor="#939398" />
+      </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+      <androidx.appcompat.widget.AppCompatButton
+          android:id="@+id/feed_enrollment_cancel"
+          style="@style/FeedButton"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:minHeight="48dp"
+          android:paddingVertical="10dp"
+          android:text="@string/feed_cancel"
+          android:textColor="#3E46F4"
+          app:backgroundTint="#F4F4F6"
+          android:textSize="12sp" />
+      <androidx.appcompat.widget.AppCompatButton
+          android:id="@+id/feed_enrollment_confirm"
+          style="@style/FeedButton"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:minHeight="48dp"
+          android:layout_marginStart="12dp"
+          android:paddingVertical="10dp"
+          android:text="@string/feed_confirm"
+          android:textSize="12sp" />
+    </LinearLayout>
+  </LinearLayout>
+</ScrollView>

@@ -20,6 +20,7 @@ class ChatActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        com.example.myapplication.navigation.AppNavigation.styleSystemBars(this)
         setContentView(R.layout.activity_chat)
 
         val cabecalho = findViewById<View>(R.id.cabecalho)
@@ -36,12 +37,19 @@ class ChatActivity : AppCompatActivity() {
         rvMensagens = findViewById(R.id.rvMensagens)
         etMensagem = findViewById(R.id.etMensagem)
 
+        savedInstanceState?.getStringArrayList("messages")?.forEach { mensagens.add(Mensagem(it, enviada = true)) }
         adapter = MensagemAdapter(mensagens)
         rvMensagens.layoutManager = LinearLayoutManager(this).apply { stackFromEnd = true }
         rvMensagens.adapter = adapter
 
         findViewById<View>(R.id.btnVoltar).setOnClickListener { finish() }
         findViewById<View>(R.id.btnEnviar).setOnClickListener { enviarMensagem() }
+        com.example.myapplication.navigation.LegacyNavigation.bind(this, 2)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putStringArrayList("messages", ArrayList(mensagens.map { it.texto }))
+        super.onSaveInstanceState(outState)
     }
 
     private fun enviarMensagem() {

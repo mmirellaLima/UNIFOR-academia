@@ -1,39 +1,34 @@
 package com.example.myapplication
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplication.navigation.*
 
 class MeusTreinosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        com.example.myapplication.navigation.AppNavigation.styleSystemBars(this)
         setContentView(R.layout.activity_meustreinos)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.meusTreinos)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.meusTreinos)) { view, insets ->
+            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.setPadding(bars.left, bars.top, bars.right, bars.bottom)
             insets
         }
-
-        findViewById<View>(R.id.btnTreinoA).setOnClickListener {
-            startActivity(Intent(this, TreinoAActivity::class.java))
+        val session = DemoSession(this)
+        findViewById<TextView>(R.id.tvNome).text = session.displayName
+        findViewById<TextView>(R.id.tvMatricula).text = session.displayRegistration
+        listOf(R.id.btnTreinoA to "A", R.id.btnTreinoB to "B", R.id.btnTreinoC to "C").forEach { (id, letter) ->
+            findViewById<View>(id).setOnClickListener {
+                AppNavigation.pending(this, PendingDestination.WORKOUT, "Treino $letter")
+            }
         }
-
-        findViewById<View>(R.id.btnVoltar).setOnClickListener {
-            finish()
-        }
-        findViewById<View>(R.id.btnChat).setOnClickListener {
-            startActivity(Intent(this, ChatActivity::class.java))
-        }
-        findViewById<View>(R.id.btnPerfil).setOnClickListener {
-            startActivity(
-                Intent(this, ConfiguracoesActivity::class.java)
-                    .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-            )
-        }
+        findViewById<View>(R.id.btnVoltar).setOnClickListener { onBackPressedDispatcher.onBackPressed() }
+        LegacyNavigation.bind(this, 3)
     }
 }

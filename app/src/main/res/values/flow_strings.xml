@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="flow_height_question">E qual é a sua altura,\n%1$s?</string>
+    <string name="flow_agenda">Agenda</string>
+    <string name="flow_age">%1$d anos</string>
+    <string name="flow_back">Voltar</string>
+    <string name="flow_logout_title">Sair da conta?</string>
+    <string name="flow_logout">Sair</string>
+    <string name="flow_cancel">Cancelar</string>
+    <string name="flow_demo_title">Acesso de demonstração</string>
+    <string name="flow_demo_student">Aluno já configurado</string>
+    <string name="flow_demo_admin">Administrador</string>
+    <string name="flow_resume">Retomar meu cadastro</string>
+    <string name="flow_chat">MoemIA Fit</string>
+    <string name="flow_weight">%1$d Kg</string>
+</resources>

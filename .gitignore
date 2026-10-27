@@ -13,3 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Local Python UI test cache
+__pycache__/
+*.pyc

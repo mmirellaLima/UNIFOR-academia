@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <size
+                        android:width="20dp"
+                        android:height="20dp" />
+                    <solid android:color="@color/ob_accent" />
+                    <stroke
+                        android:width="1.5dp"
+                        android:color="@color/ob_accent" />
+                    <corners android:radius="3dp" />
+                </shape>
+            </item>
+            <item
+                android:drawable="@drawable/ob_check_mark"
+                android:top="2dp"
+                android:bottom="2dp"
+                android:left="2dp"
+                android:right="2dp" />
+        </layer-list>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <size
+                android:width="20dp"
+                android:height="20dp" />
+            <solid android:color="@color/ob_transparent" />
+            <stroke
+                android:width="1.5dp"
+                android:color="@color/ob_color_8e99a8" />
+            <corners android:radius="3dp" />
+        </shape>
+    </item>
+</selector>

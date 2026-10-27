@@ -1,6 +1,8 @@
 # Proposta de fluxo completo do aplicativo
 
-Proposta para revisão em 27/10/2026. Branch: `feat/conexoes-fluxos`, baseada em `dev` (`42b98a2`). Esta entrega documenta as conexões; ainda não implementa nem integra as telas.
+Mapa aprovado e integração local iniciada em 27/10/2026. Branch: `feat/conexoes-fluxos`, baseada em `dev` (`42b98a2`). As conexões disponíveis foram implementadas; os percursos dependentes de entregas pendentes continuam reservados. Consulte `execucao-e-validacao-fluxos.md` para execução e limites da integração.
+
+**Publicação suspensa:** nenhuma alteração desta implementação deve receber push sem nova autorização explícita do usuário. A `dev` e as branches individuais permanecem preservadas.
 
 O escopo continua sendo conectar as telas prontas e seus estados de demonstração. Integração com servidor, autenticação real, envio de e-mail e Toolfit ficam para uma etapa posterior.
 
@@ -207,7 +209,7 @@ Criação geral de fichas, gerenciamento de alunos e integração de exercícios
 - Preservar a padronização mais recente de cores, fontes, componentes e formas do background.
 - Manter o trabalho em `feat/conexoes-fluxos`, sem merge na `dev` nem alteração das branches individuais.
 
-**8. Ordem proposta para implementar após a revisão deste mapa**
+**8. Sequência de implementação aprovada**
 
 1. Conciliar estrutura, configurações de build e entrada do aplicativo.
 2. Conectar boas-vindas, cadastro e login prontos; reservar a recuperação vazia.

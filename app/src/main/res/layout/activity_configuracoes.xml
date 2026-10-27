@@ -365,7 +365,7 @@
             android:background="@drawable/bg_logo"
             android:contentDescription="Logo"
             android:padding="16dp"
-            android:src="@drawable/logo_unifor_ia" />
+            android:src="@drawable/logo_chat" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -389,7 +389,7 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <LinearLayout
+        <LinearLayout android:id="@+id/btnPerfil"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
