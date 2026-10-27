@@ -22,12 +22,12 @@ class ConfiguracoesActivity : AppCompatActivity() {
             insets
         }
         findViewById<View>(R.id.btnVoltar).setOnClickListener { onBackPressedDispatcher.onBackPressed() }
-        listOf(
-            R.id.btnObjetivos to PendingDestination.GOALS,
-            R.id.btnDadosPessoais to PendingDestination.PERSONAL_DATA,
-            R.id.btnNotificacoes to PendingDestination.NOTIFICATIONS
-        ).forEach { (id, destination) ->
-            findViewById<View>(id).setOnClickListener { AppNavigation.pending(this, destination) }
+        findViewById<View>(R.id.btnObjetivos).setOnClickListener { AppNavigation.goals(this) }
+        findViewById<View>(R.id.btnDadosPessoais).setOnClickListener {
+            startActivity(android.content.Intent(this, DadosPessoaisActivity::class.java))
+        }
+        findViewById<View>(R.id.btnNotificacoes).setOnClickListener {
+            startActivity(android.content.Intent(this, NotificacoesActivity::class.java))
         }
         findViewById<View>(R.id.btnQuestionario).setOnClickListener { AppNavigation.reviewHealth(this) }
         findViewById<View>(R.id.btnSair).setOnClickListener { AppNavigation.confirmLogout(this) }
