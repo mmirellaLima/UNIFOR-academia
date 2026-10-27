@@ -140,3 +140,14 @@ Ambiente: emuladores Android API 37, orientação retrato/paisagem e largura de
 320 dp. Não foram executados testes em aparelho físico ou outras versões do Android.
 As telas pendentes continuam impedindo a conclusão real do primeiro acesso,
 conforme a orientação de não desenvolvê-las nesta branch.
+
+## Janela preta do emulador neste computador
+
+No AVD `Medium_Phone_API_37.0`, a captura interna do Android mostrava o app
+normalmente, mas a janela no Windows era relatada como preta. Reiniciar com
+`-gpu swiftshader` permitiu verificar a tela de Login na própria janela.
+A configuração local do AVD passou de `hw.gpu.mode=auto` para `swiftshader`,
+com inicialização a frio (`fastboot.forceColdBoot=yes`), preservando os dados.
+Essa configuração pertence ao emulador deste computador e não é distribuída
+pelo Git. Se ocorrer em outro computador, feche o emulador, selecione renderização
+Software nas configurações do dispositivo no Device Manager e faça Cold Boot.
