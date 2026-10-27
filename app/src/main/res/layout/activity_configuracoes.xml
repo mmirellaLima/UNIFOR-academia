@@ -30,6 +30,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/btnTamanhoFonte"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Alterar tamanho da fonte"
+            android:padding="4dp"
+            android:src="@drawable/ic_tamanho_fonte"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tvTituloConfig"
             android:layout_width="wrap_content"
@@ -280,18 +292,6 @@
             android:textSize="15sp" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/btnFonte"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/bg_fab_fonte"
-        android:contentDescription="Tamanho da fonte"
-        android:padding="8dp"
-        android:src="@drawable/ic_fonte"
-        app:layout_constraintBottom_toTopOf="@id/linhaBarra"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <View
         android:id="@+id/linhaBarra"

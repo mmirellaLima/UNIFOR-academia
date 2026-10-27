@@ -3,17 +3,18 @@ package com.example.myapplication
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class ExercicioSeletActivity : AppCompatActivity() {
+class ExercicioSeletActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_exercicioselet)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.ExSelet)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -23,6 +24,10 @@ class ExercicioSeletActivity : AppCompatActivity() {
         val nome = intent.getStringExtra("nome")
         if (nome != null) {
             findViewById<TextView>(R.id.tvTituloExercicio).text = nome
+        }
+
+        findViewById<ImageView>(R.id.btnTamanhoFonte).setOnClickListener {
+            MenuAcessibilidadeDialog().show(supportFragmentManager, "acessibilidade")
         }
 
         findViewById<View>(R.id.btnVoltar).setOnClickListener { finish() }
@@ -36,6 +41,7 @@ class ExercicioSeletActivity : AppCompatActivity() {
             startActivity(
                 Intent(this, ConfiguracoesActivity::class.java)
                     .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            )
         }
     }
 }
