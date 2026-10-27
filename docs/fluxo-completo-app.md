@@ -2,7 +2,35 @@
 
 Proposta para revisão em 27/10/2026. Branch: `feat/conexoes-fluxos`, baseada em `dev` (`42b98a2`). Esta entrega documenta as conexões; ainda não implementa nem integra as telas.
 
-O escopo continua sendo telas, transições e estados de demonstração. Login, recuperação de senha, respostas, inscrições e alterações de dados serão simulados nesta etapa. Integração com servidor, autenticação real, envio de e-mail e Toolfit ficam para uma etapa posterior.
+O escopo continua sendo conectar as telas prontas e seus estados de demonstração. Integração com servidor, autenticação real, envio de e-mail e Toolfit ficam para uma etapa posterior.
+
+**Atualização de escopo: telas em produção por outros colegas**
+
+Conforme a orientação do usuário e a lista enviada em 27/10/2026, não desenvolver nem completar as telas abaixo. Reservar os destinos de navegação, mantendo seu conteúdo vazio até receber a entrega correspondente. O mapa de fluxo continua mostrando os destinos finais do produto, mas não autoriza implementar essas telas agora.
+
+| Entrega pendente | Tratamento nesta branch |
+| --- | --- |
+| Detalhe do exercício, como Supino máquina | Destino reservado e conteúdo vazio; não implementar séries, repetições, descanso, foco muscular ou conclusão |
+| Detalhe do treino, como Treino A | Destino reservado e conteúdo vazio; não implementar lista de exercícios nem seção Concluídos |
+| Recuperar senha, seus quatro estados/telas | Reservar o acesso pelo login, sem criar formulários, mensagens de erro ou confirmação |
+| Objetivos | Reservar os acessos do onboarding, Perfil e Configurações; não criar seleção nem ações de salvar |
+| Tamanho da fonte/painel de acessibilidade | Reservar o acionamento; não implementar painel nem controles |
+| Alterar senha e editar e-mail | Reservar os acessos em Dados pessoais, sem desenvolver formulários |
+| Telas pendentes da área ADM, nove frames mencionados na lista | Não criar novas telas administrativas; manter as entregas prontas preservadas e reservar o que falta |
+
+A imagem enviada não mostra a continuação que discrimina os nove frames da área ADM. Não inventar essa lista. O feed administrativo já entregue não deve ser apagado ou refeito; qualquer conteúdo administrativo ainda em produção permanece pendente.
+
+Os espaços vazios não devem receber um desenho alternativo nem textos de “em desenvolvimento”. Devem apenas permitir retorno à origem pelo mecanismo de navegação comum. Também não substituir ou apagar implementações existentes dos colegas para tornar uma tela vazia: essas implementações ficam preservadas em suas branches, e o destino pendente da integração recebe a entrega quando estiver pronta.
+
+Como Objetivos é uma etapa intermediária pendente, o primeiro acesso não será considerado completamente integrado até sua entrega. Enquanto isso, Perfil e Feed podem ser verificados no cenário de demonstração de aluno já configurado; não pular a etapa de Objetivos silenciosamente nem inventar uma nova tela para contorná-la.
+
+**Como reunir o trabalho da equipe**
+
+- Cada colega continua desenvolvendo e publicando commits na própria branch. Ninguém precisa integrar todas as outras branches no próprio trabalho.
+- Buscar e incorporar as entregas prontas exclusivamente em `feat/conexoes-fluxos`, resolvendo conflitos nessa branch.
+- Preservar as branches individuais. Trazer atualizações de uma entrega quando seu responsável publicá-las.
+- Não depender de permissão para fazer merge na `dev`: esta etapa não modifica nem publica commits nela.
+- Não reescrever uma tela pendente para resolver conflito ou liberar uma conexão. Manter seu destino reservado até a entrega do colega.
 
 **O que foi consultado**
 
@@ -56,7 +84,7 @@ flowchart TD
 - Cadastro de aluno leva à configuração inicial. O acesso administrativo não passa pelo questionário do aluno.
 - O papel de aluno ou administrador pode ser selecionado por um mecanismo de demonstração para testar as duas experiências, sem representar autenticação real.
 - Login inválido ou campo obrigatório vazio mantém a tela atual e mostra seu estado de erro.
-- Recuperação: matrícula → estado de erro ou confirmação com e-mail mascarado → voltar ao login. O envio será apenas representado visualmente.
+- Fluxo final da recuperação: matrícula → estado de erro ou confirmação com e-mail mascarado → voltar ao login. A implementação está com outro colega; nesta etapa, apenas reservar o destino vazio.
 - Finalizar a configuração abre o feed e remove as etapas iniciais do histórico de retorno. Dentro da configuração, voltar preserva o que já foi preenchido.
 
 **2. Configuração inicial completa**
@@ -104,7 +132,7 @@ Barra inferior comum: **Início · Progresso · MoemIA Fit · Treinos · Perfil*
 | Perfil → engrenagem | Configurações | Perfil |
 | Perfil → foto | Seleção/prévia de foto, quando incluída na etapa visual | Perfil |
 
-A aba Perfil sempre abre o perfil do usuário; Configurações fica acessível pela engrenagem. Treinos históricos devem ser tratados como consulta, sem alterar o estado de uma sessão de treino atual.
+A aba Perfil sempre abre o perfil do usuário; Configurações fica acessível pela engrenagem. Treinos históricos devem ser tratados como consulta, sem alterar o estado de uma sessão de treino atual. Os detalhes de treino/exercício e a tela de Objetivos permanecem vazios nesta integração enquanto aguardam as entregas indicadas na atualização de escopo.
 
 **4. Configurações e retornos**
 
@@ -160,10 +188,11 @@ Criação geral de fichas, gerenciamento de alunos e integração de exercícios
 | Perfil ainda tem ações sem destino e “Salvar” volta para altura | Conectar objetivos/resultados/treinos e concluir a configuração no feed |
 | Alguns atalhos Perfil abrem Configurações diretamente | Abrir Perfil e manter a engrenagem para Configurações |
 | Progresso possui callbacks sem conexões completas | Ligar todas as abas, chat e histórico |
-| Agenda administrativa abre apenas calendário | Implementar tela de agenda do protótipo e reutilizar os painéis |
-| Treinos administrativos abre a experiência do aluno | Conectar a uma apresentação coerente com o papel de instrutor |
-| Recuperação ainda é uma tela provisória | Criar os estados visuais de recuperação e confirmação |
-| Dados pessoais, e-mail, senha e notificações não têm telas completas na base consultada | Criar/reaproveitar as telas do documento e conectar os retornos |
+| Agenda administrativa abre apenas calendário | Reservar o destino de Agenda e aguardar a entrega administrativa; não criar a tela |
+| Treinos administrativos abre a experiência do aluno | Reservar o destino administrativo correspondente e aguardar sua entrega |
+| Recuperação ainda é uma tela provisória | Manter o destino reservado e vazio; aguardar os quatro estados/telas do colega |
+| Edição de e-mail e alteração de senha ainda estão em produção | Reservar os destinos vazios; não criar os formulários |
+| Outras telas de Dados pessoais e notificações precisam ser conferidas | Integrar apenas entregas existentes e prontas; não preencher lacunas com novas telas sem definição de escopo |
 
 **7. Regras gerais para a integração**
 
@@ -181,11 +210,12 @@ Criação geral de fichas, gerenciamento de alunos e integração de exercícios
 **8. Ordem proposta para implementar após a revisão deste mapa**
 
 1. Conciliar estrutura, configurações de build e entrada do aplicativo.
-2. Conectar boas-vindas, cadastro, login e recuperação.
-3. Completar dados iniciais, questionários, objetivos e perfil.
-4. Conectar as cinco áreas do aluno, incluindo todos os retornos.
-5. Completar configurações e os destinos ainda ausentes do documento.
-6. Conectar início, agenda, treinos e perfil administrativos.
-7. Testar os caminhos de aluno novo, aluno já configurado, configuração interrompida, refazer saúde, administrador, cancelamento e saída, incluindo Voltar e rotação.
+2. Conectar boas-vindas, cadastro e login prontos; reservar a recuperação vazia.
+3. Conectar dados iniciais e questionários prontos, reservando Objetivos e respeitando a origem dos retornos.
+4. Conectar as áreas prontas do aluno; detalhes de treino e exercício ficam reservados e vazios.
+5. Conectar as entregas prontas de configurações; reservar alteração de senha, edição de e-mail e painel de fonte.
+6. Preservar e conectar somente as entregas administrativas prontas; não desenvolver as telas ADM ainda em produção.
+7. Testar os caminhos disponíveis, o retorno dos destinos vazios, a separação aluno/administrador, saída e rotação. Registrar quais percursos continuam bloqueados por entregas pendentes.
+8. Quando cada colega concluir e publicar sua entrega, substituir somente o destino reservado correspondente e testar o fluxo que ela libera.
 
-Critério de conclusão da etapa visual: todo controle de navegação possui destino coerente ou um diálogo contextual previsto; nenhum fluxo termina em tela vazia ou provisória. As telas devem ser acessíveis a partir da entrada do aplicativo, sem depender da execução isolada de uma Activity no Android Studio.
+Critério da integração atual: toda tela pronta tem conexões e retornos coerentes; as entregas pendentes da equipe têm destinos reservados, conteúdo vazio e retorno funcional. Esses espaços são exceções explícitas solicitadas pelo usuário e não devem ser apresentados como fluxos já concluídos. As telas prontas devem ser acessíveis a partir da entrada do aplicativo, sem depender da execução isolada de uma Activity no Android Studio.
