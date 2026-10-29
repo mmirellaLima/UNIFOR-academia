@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.navigation.AppNavigation
 import com.example.myapplication.navigation.PendingDestination
 
-class AlterarSenhaActivity : AppCompatActivity() {
+class AlterarSenhaActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -50,9 +50,7 @@ class AlterarSenhaActivity : AppCompatActivity() {
             }
         }
 
-        findViewById<View>(R.id.btnFonte).setOnClickListener {
-            AppNavigation.pending(this, PendingDestination.FONT_SIZE)
-        }
+        findViewById<View>(R.id.btnFonte).setOnClickListener { abrirMenuAcessibilidade() }
 
         val barra = findViewById<LinearLayout>(R.id.barraInferior)
         barra.getChildAt(0).setOnClickListener { AppNavigation.home(this) }

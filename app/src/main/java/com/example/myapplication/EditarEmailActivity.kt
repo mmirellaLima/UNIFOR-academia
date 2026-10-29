@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.navigation.AppNavigation
 import com.example.myapplication.navigation.PendingDestination
 
-class EditarEmailActivity : AppCompatActivity() {
+class EditarEmailActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -43,9 +43,7 @@ class EditarEmailActivity : AppCompatActivity() {
             }
         }
 
-        findViewById<View>(R.id.btnFonte).setOnClickListener {
-            AppNavigation.pending(this, PendingDestination.FONT_SIZE)
-        }
+        findViewById<View>(R.id.btnFonte).setOnClickListener { abrirMenuAcessibilidade() }
 
         val barra = findViewById<LinearLayout>(R.id.barraInferior)
         barra.getChildAt(0).setOnClickListener { AppNavigation.home(this) }

@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.navigation.AppNavigation
 import com.example.myapplication.navigation.PendingDestination
 
-class DadosPessoaisActivity : AppCompatActivity() {
+class DadosPessoaisActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,6 +30,8 @@ class DadosPessoaisActivity : AppCompatActivity() {
         findViewById<View>(R.id.btnAlterarSenha).setOnClickListener {
             startActivity(android.content.Intent(this, AlterarSenhaActivity::class.java))
         }
+
+        findViewById<View>(R.id.btnFonte).setOnClickListener { abrirMenuAcessibilidade() }
 
         val barra = findViewById<LinearLayout>(R.id.barraInferior)
         barra.getChildAt(0).setOnClickListener { AppNavigation.home(this) }

@@ -8,7 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.navigation.*
 
-class ConfiguracoesActivity : AppCompatActivity() {
+class ConfiguracoesActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -32,5 +32,7 @@ class ConfiguracoesActivity : AppCompatActivity() {
         findViewById<View>(R.id.btnQuestionario).setOnClickListener { AppNavigation.reviewHealth(this) }
         findViewById<View>(R.id.btnSair).setOnClickListener { AppNavigation.confirmLogout(this) }
         LegacyNavigation.bind(this, 4)
+
+        findViewById<View>(R.id.btnFonte).setOnClickListener { abrirMenuAcessibilidade() }
     }
 }
