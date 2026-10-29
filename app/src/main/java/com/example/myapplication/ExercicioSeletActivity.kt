@@ -39,11 +39,6 @@ class ExercicioSeletActivity : BaseActivity() {
         findViewById<View>(R.id.btnVoltar).setOnClickListener { finish() }
         findViewById<View>(R.id.button2).setOnClickListener { finish() }
 
-        val barra = findViewById<LinearLayout>(R.id.barraInferior)
-        barra.getChildAt(0).setOnClickListener { AppNavigation.home(this) }
-        barra.getChildAt(1).setOnClickListener { AppNavigation.progress(this) }
-        findViewById<View>(R.id.btnChat).setOnClickListener { AppNavigation.chat(this) }
-        barra.getChildAt(3).setOnClickListener { AppNavigation.workouts(this) }
-        findViewById<View>(R.id.btnPerfil).setOnClickListener { AppNavigation.profile(this) }
+        com.example.myapplication.navigation.LegacyNavigation.bind(this, 3)
     }
 }

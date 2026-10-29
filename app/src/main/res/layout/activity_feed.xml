@@ -99,26 +99,33 @@
       </LinearLayout>
     </LinearLayout>
   </androidx.core.widget.NestedScrollView>
-  <LinearLayout android:id="@+id/feed_nav" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="72dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="#242528" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
-    <LinearLayout android:id="@+id/feed_nav_home" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_home">
-      <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_inicio" android:importantForAccessibility="no" />
-      <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_home" android:textSize="12sp" />
-    </LinearLayout>
-    <LinearLayout android:id="@+id/feed_nav_progress" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_progress">
-      <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_progresso" android:importantForAccessibility="no" />
-      <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_progress" android:textSize="12sp" />
-    </LinearLayout>
-    <LinearLayout android:id="@+id/feed_nav_chat" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_chat">
-      <ImageView android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/feed_unifor_icon" android:importantForAccessibility="no" android:padding="0dp" android:scaleType="fitCenter" />
-    </LinearLayout>
-    <LinearLayout android:id="@+id/feed_nav_training" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_training">
-      <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_treinos" android:importantForAccessibility="no" />
-      <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_training" android:textSize="12sp" />
-    </LinearLayout>
-    <LinearLayout android:id="@+id/feed_nav_profile" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_profile">
-      <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_perfil" android:importantForAccessibility="no" />
-      <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_profile" android:textSize="12sp" />
-    </LinearLayout>
-  </LinearLayout>
-  <FrameLayout android:id="@+id/feed_accessibility_bar" android:layout_width="0dp" android:layout_height="60dp" app:layout_constraintBottom_toTopOf="@id/feed_nav" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"><ImageButton android:id="@+id/feed_font" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginEnd="12dp" android:layout_gravity="end|center_vertical" android:background="@drawable/bg_fab_fonte" android:padding="10dp" android:src="@drawable/ic_fonte" android:contentDescription="@string/feed_font" /></FrameLayout>
+<include
+    layout="@layout/flow_bottom_navigation"
+    android:id="@+id/feed_nav"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+<FrameLayout
+    android:id="@+id/feed_accessibility_bar"
+    android:layout_width="0dp"
+    android:layout_height="60dp"
+    app:layout_constraintBottom_toTopOf="@id/feed_nav"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <ImageButton
+        android:id="@+id/feed_font"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_fab_fonte"
+        android:padding="10dp"
+        android:src="@drawable/ic_fonte"
+        android:contentDescription="@string/feed_font" />
+
+</FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
