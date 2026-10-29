@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dp_azul_claro">#FF8AB4FF</color>
+    <color name="dp_azul_texto">#FF0A2BA8</color>
+    <color name="dp_texto_escuro">#FF0A0F2C</color>
+</resources>

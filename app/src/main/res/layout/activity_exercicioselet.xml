@@ -70,10 +70,8 @@
                     android:background="@drawable/bg_exercicio"
                     android:clipToOutline="true"
                     android:contentDescription="Foto do exercício"
-                    android:padding="32dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_treinos"
-                    app:tint="@color/cinza_avatar" />
+                    android:src="@drawable/ex_supino_maquina" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

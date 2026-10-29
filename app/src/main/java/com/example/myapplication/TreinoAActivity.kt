@@ -1,14 +1,16 @@
 package com.example.myapplication
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplication.navigation.AppNavigation
 
-class TreinoAActivity : AppCompatActivity() {
+class TreinoAActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,6 +21,9 @@ class TreinoAActivity : AppCompatActivity() {
             insets
         }
 
+        // Titulo vem do Meus treinos / Feed ("Treino A", "Treino B"...)
+        intent.getStringExtra("treino")?.let { findViewById<TextView>(R.id.tvTitulo).text = it }
+
         findViewById<View>(R.id.btnVoltar).setOnClickListener { finish() }
 
         findViewById<View>(R.id.cardExercicio1).setOnClickListener { abrirExercicio("Supino Máquina") }
@@ -26,20 +31,14 @@ class TreinoAActivity : AppCompatActivity() {
         findViewById<View>(R.id.cardExercicio3).setOnClickListener { abrirExercicio("Desenvolvimento de ombros") }
         findViewById<View>(R.id.cardConcluido1).setOnClickListener { abrirExercicio("Desenvolvimento de ombros") }
 
-        findViewById<View>(R.id.btnChat).setOnClickListener {
-            startActivity(Intent(this, ChatActivity::class.java))
-        }
-        findViewById<View>(R.id.btnPerfil).setOnClickListener {
-            startActivity(
-                Intent(this, ConfiguracoesActivity::class.java)
-                    .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-            )
-        }
+        // Barra inferior: 0 Inicio, 1 Progresso, 2 logo (chat), 3 Treinos, 4 Perfil
+        val barra = findViewById<ViewGroup>(R.id.barraInferior)
+        barra.getChildAt(0).setOnClickListener { AppNavigation.home(this) }
+        barra.getChildAt(1).setOnClickListener { AppNavigation.progress(this) }
+        barra.getChildAt(2).setOnClickListener { AppNavigation.chat(this) }
+        barra.getChildAt(3).setOnClickListener { AppNavigation.workouts(this) }
+        barra.getChildAt(4).setOnClickListener { AppNavigation.profile(this) }
     }
 
-    private fun abrirExercicio(nome: String) {
-        val intent = Intent(this, ExercicioSeletActivity::class.java)
-        intent.putExtra("nome", nome)
-        startActivity(intent)
-    }
+    private fun abrirExercicio(nome: String) = AppNavigation.exercise(this, nome)
 }

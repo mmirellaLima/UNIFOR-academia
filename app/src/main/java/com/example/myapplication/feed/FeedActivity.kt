@@ -26,7 +26,7 @@ class FeedActivity : AppCompatActivity() {
             insets
         }
         findViewById<View>(R.id.feed_back).setOnClickListener { onBackPressedDispatcher.onBackPressed() }
-        findViewById<View>(R.id.feed_start).setOnClickListener { AppNavigation.pending(this, PendingDestination.WORKOUT, "Treino A") }
+        findViewById<View>(R.id.feed_start).setOnClickListener { AppNavigation.workout(this, "Treino A") }
         findViewById<View>(R.id.feed_nav_training).setOnClickListener { AppNavigation.workouts(this) }
         findViewById<View>(R.id.feed_nav_profile).setOnClickListener { AppNavigation.profile(this) }
         findViewById<View>(R.id.feed_nav_chat).setOnClickListener { AppNavigation.chat(this) }
@@ -40,7 +40,7 @@ class FeedActivity : AppCompatActivity() {
             R.id.feed_curl_card to R.string.feed_curl,
             R.id.feed_shoulder_card to R.string.feed_shoulder).forEach { (id, title) ->
             findViewById<View>(id).setOnClickListener {
-                AppNavigation.pending(this, PendingDestination.EXERCISE, getString(title))
+                AppNavigation.exercise(this, getString(title))
             }
         }
         bindClass("jiu", R.id.feed_jiu_action, R.id.feed_jiu_seats, 5, false)

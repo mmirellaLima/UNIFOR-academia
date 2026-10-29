@@ -20,7 +20,7 @@ class ProgressActivity : ComponentActivity() {
                     onTreinos = { AppNavigation.workouts(this) },
                     onPerfil = { AppNavigation.profile(this) },
                     onChat = { AppNavigation.chat(this) },
-                    onExercicio = { AppNavigation.pending(this, PendingDestination.EXERCISE, it) }
+                    onExercicio = { AppNavigation.exercise(this, it) }
                 )
             }
         }
