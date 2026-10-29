@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/feed_root" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#191A1E" tools:context=".feed.FeedActivity">
   <androidx.core.widget.NestedScrollView android:id="@+id/feed_scroll" android:layout_width="0dp" android:layout_height="0dp" android:fillViewport="true" android:clipToPadding="false" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toTopOf="@id/feed_nav" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingHorizontal="28dp" android:paddingTop="20dp" android:paddingBottom="32dp">
@@ -99,26 +99,6 @@
       </LinearLayout>
     </LinearLayout>
   </androidx.core.widget.NestedScrollView>
-  <LinearLayout android:id="@+id/feed_nav" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="72dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="#242528" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
-    <LinearLayout android:id="@+id/feed_nav_home" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_home">
-      <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_inicio" android:importantForAccessibility="no" />
-      <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_home" android:textSize="12sp" />
-    </LinearLayout>
-    <LinearLayout android:id="@+id/feed_nav_progress" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_progress">
-      <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_progresso" android:importantForAccessibility="no" />
-      <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_progress" android:textSize="12sp" />
-    </LinearLayout>
-    <LinearLayout android:id="@+id/feed_nav_chat" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_chat">
-      <ImageView android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/feed_unifor_icon" android:importantForAccessibility="no" android:padding="0dp" android:scaleType="fitCenter" />
-    </LinearLayout>
-    <LinearLayout android:id="@+id/feed_nav_training" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_training">
-      <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_treinos" android:importantForAccessibility="no" />
-      <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_training" android:textSize="12sp" />
-    </LinearLayout>
-    <LinearLayout android:id="@+id/feed_nav_profile" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:minHeight="64dp" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:contentDescription="@string/feed_profile">
-      <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_perfil" android:importantForAccessibility="no" />
-      <TextView style="@style/FeedText" android:layout_marginTop="4dp" android:text="@string/feed_profile" android:textSize="12sp" />
-    </LinearLayout>
-  </LinearLayout>
+  <include layout="@layout/flow_bottom_navigation" android:id="@+id/feed_nav" android:layout_width="0dp" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" />
   <ImageButton android:id="@+id/feed_font" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginEnd="12dp" android:layout_marginBottom="12dp" android:background="@drawable/bg_fab_fonte" android:padding="10dp" android:src="@drawable/ic_fonte" android:contentDescription="@string/feed_font" app:layout_constraintBottom_toTopOf="@id/feed_nav" app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

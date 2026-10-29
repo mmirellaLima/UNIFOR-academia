@@ -8,6 +8,6 @@ class CompletionActivity : CadastroActivity() {
     override val optionIds = emptyList<Int>()
 
     override fun onAnswerConfirmed() {
-        com.example.myapplication.navigation.AppNavigation.setup(this, com.example.myapplication.navigation.SetupStep.GOALS)
+        com.example.myapplication.navigation.AppNavigation.profile(this)
     }
 }
