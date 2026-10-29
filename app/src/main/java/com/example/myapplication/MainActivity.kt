@@ -23,7 +23,7 @@ import com.example.myapplication.navigation.*
 import com.example.myapplication.ui.onboarding.*
 import com.example.myapplication.ui.theme.AcademiaUniforTheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : com.example.myapplication.BaseActivity() {
     private var currentPage = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

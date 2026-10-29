@@ -11,7 +11,7 @@ import com.example.myapplication.ui.components.AppBackground
 import com.example.myapplication.ui.saude.TelaSaude
 import com.example.myapplication.ui.theme.AcademiaUniforTheme
 
-class HealthActivity : ComponentActivity() {
+class HealthActivity : com.example.myapplication.BaseActivity() {
     private val reviewing get() = intent.getBooleanExtra(AppNavigation.EXTRA_RETAKE, false)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

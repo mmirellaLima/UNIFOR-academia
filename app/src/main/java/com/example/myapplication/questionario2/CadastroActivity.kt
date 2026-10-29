@@ -17,7 +17,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 
-abstract class CadastroActivity : AppCompatActivity() {
+abstract class CadastroActivity : com.example.myapplication.BaseActivity() {
     protected abstract val screenLayout: Int
     protected open val optionIds = emptyList<Int>()
     protected open val answerInputId: Int? = null

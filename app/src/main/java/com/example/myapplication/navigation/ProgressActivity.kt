@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import com.example.myapplication.ui.progresso.ProgressoScreen
 import com.example.myapplication.ui.theme.AcademiaUniforTheme
 
-class ProgressActivity : ComponentActivity() {
+class ProgressActivity : com.example.myapplication.BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

@@ -13,7 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 
-class AlturaActivity : AppCompatActivity() {
+class AlturaActivity : com.example.myapplication.BaseActivity() {
 
     companion object {
         const val EXTRA_HEIGHT_CM = "com.example.myapplication.onboarding.HEIGHT_CM"

@@ -15,7 +15,7 @@ import com.example.myapplication.ObjetivosActivity
 import com.example.myapplication.R
 import com.example.myapplication.navigation.*
 
-class PerfilActivity : AppCompatActivity() {
+class PerfilActivity : com.example.myapplication.BaseActivity() {
 
     private lateinit var layoutVazio: View
     private lateinit var layoutLista: View

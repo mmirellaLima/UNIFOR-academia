@@ -11,8 +11,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.example.myapplication.R
+import com.example.myapplication.BaseActivity
 
-class FeedActivity : AppCompatActivity() {
+class FeedActivity : BaseActivity() {
     private val classRenderers = mutableListOf<() -> Unit>()
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -18,7 +18,7 @@ import com.example.myapplication.navigation.AppNavigation
 import com.example.myapplication.navigation.DemoSession
 import com.example.myapplication.navigation.PendingDestination
 
-class AdminPerfilActivity : AppCompatActivity() {
+class AdminPerfilActivity : com.example.myapplication.BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -18,7 +18,7 @@ import com.example.myapplication.navigation.AccessRole
 import com.example.myapplication.navigation.AppNavigation
 import com.example.myapplication.navigation.DemoSession
 
-class AdminAgendaActivity : AppCompatActivity() {
+class AdminAgendaActivity : com.example.myapplication.BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
