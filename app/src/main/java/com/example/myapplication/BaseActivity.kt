@@ -1,15 +1,12 @@
 package com.example.myapplication
 
-import android.content.Context
-import android.content.res.Configuration
+import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.AcessibilidadePrefs
+import com.example.myapplication.navigation.FontAccessibility
 
 open class BaseActivity : AppCompatActivity() {
-
-    override fun attachBaseContext(newBase: Context) {
-        val config = Configuration(newBase.resources.configuration)
-        config.fontScale = AcessibilidadePrefs.getEscala(newBase)
-        super.attachBaseContext(newBase.createConfigurationContext(config))
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
+        FontAccessibility.bind(this)
     }
 }
