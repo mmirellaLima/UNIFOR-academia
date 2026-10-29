@@ -1,98 +1,45 @@
-<?xml version='1.0' encoding='utf-8'?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/barraInferior"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/fundo"
-    android:gravity="center_vertical"
-    android:orientation="horizontal"
-    android:paddingVertical="8dp">
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:contentDescription="Início"
-            android:src="@drawable/ic_inicio"
-            app:tint="@android:color/white" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Início"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:contentDescription="Progresso"
-            android:src="@drawable/ic_progresso"
-            app:tint="@android:color/white" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Progresso"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
-    </LinearLayout>
-    <ImageView
-        android:id="@+id/btnChat"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@drawable/bg_logo"
-        android:contentDescription="Logo"
-        android:padding="16dp"
-        android:src="@drawable/logo_chat"
-        app:tint="@android:color/white" />
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:contentDescription="Treinos"
-            android:src="@drawable/ic_treinos"
-            app:tint="@color/azul_selecionado" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Treinos"
-            android:textColor="@color/azul_selecionado"
-            android:textSize="12sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
-        <ImageView
-            android:id="@+id/btnPerfil"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:contentDescription="Perfil"
-            android:src="@drawable/ic_perfil"
-            app:tint="@android:color/white" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Perfil"
-            android:textColor="@android:color/white"
-            android:textSize="12sp" />
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/barraInferior" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:minHeight="80dp" android:paddingTop="9dp" android:paddingBottom="8dp"
+    android:background="@drawable/navigation_background" android:gravity="center_vertical" android:orientation="horizontal">    <LinearLayout android:id="@+id/nav_inicio" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+        android:minHeight="64dp" android:paddingHorizontal="2dp" android:gravity="center" android:orientation="vertical"
+        android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground"
+        android:contentDescription="@string/feed_home">
+        <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_inicio"
+            app:tint="@color/navigation_default" android:importantForAccessibility="no" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp"
+            android:text="@string/feed_home" android:textColor="@color/navigation_default" android:textSize="12sp"
+            android:fontFamily="sans-serif-light" android:gravity="center" android:importantForAccessibility="no" />
+    </LinearLayout>    <LinearLayout android:id="@+id/nav_progresso" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+        android:minHeight="64dp" android:paddingHorizontal="2dp" android:gravity="center" android:orientation="vertical"
+        android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground"
+        android:contentDescription="@string/feed_progress">
+        <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_progresso"
+            app:tint="@color/navigation_default" android:importantForAccessibility="no" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp"
+            android:text="@string/feed_progress" android:textColor="@color/navigation_default" android:textSize="12sp"
+            android:fontFamily="sans-serif-light" android:gravity="center" android:importantForAccessibility="no" />
+    </LinearLayout>    <ImageView android:id="@+id/btnChat" android:layout_width="0dp" android:layout_weight="1" android:layout_height="64dp"
+        android:scaleType="fitCenter" android:padding="2dp" android:src="@drawable/feed_unifor_icon"
+        android:contentDescription="@string/flow_chat" android:clickable="true" android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless" />    <LinearLayout android:id="@+id/nav_treinos" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+        android:minHeight="64dp" android:paddingHorizontal="2dp" android:gravity="center" android:orientation="vertical"
+        android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground"
+        android:contentDescription="@string/feed_training">
+        <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_treinos"
+            app:tint="@color/navigation_default" android:importantForAccessibility="no" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp"
+            android:text="@string/feed_training" android:textColor="@color/navigation_default" android:textSize="12sp"
+            android:fontFamily="sans-serif-light" android:gravity="center" android:importantForAccessibility="no" />
+    </LinearLayout>    <LinearLayout android:id="@+id/btnPerfil" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+        android:minHeight="64dp" android:paddingHorizontal="2dp" android:gravity="center" android:orientation="vertical"
+        android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground"
+        android:contentDescription="@string/feed_profile">
+        <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_perfil"
+            app:tint="@color/navigation_default" android:importantForAccessibility="no" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp"
+            android:text="@string/feed_profile" android:textColor="@color/navigation_default" android:textSize="12sp"
+            android:fontFamily="sans-serif-light" android:gravity="center" android:importantForAccessibility="no" />
     </LinearLayout>
 </LinearLayout>
