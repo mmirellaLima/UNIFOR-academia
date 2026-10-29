@@ -1,15 +1,17 @@
 package com.example.myapplication
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplication.navigation.AppNavigation
 
-class ExercicioSeletActivity : AppCompatActivity() {
+class ExercicioSeletActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,6 +26,15 @@ class ExercicioSeletActivity : AppCompatActivity() {
         if (nome != null) {
             findViewById<TextView>(R.id.tvTituloExercicio).text = nome
         }
+
+        val foto = when {
+            nome?.contains("rosca", ignoreCase = true) == true -> R.drawable.ex_rosca_biceps
+            nome?.contains("ombro", ignoreCase = true) == true ||
+                    nome?.contains("desenvolvimento", ignoreCase = true) == true ->
+                R.drawable.ex_desenvolvimento_ombros
+            else -> R.drawable.ex_supino_maquina
+        }
+        findViewById<ImageView>(R.id.imgExercicio).setImageResource(foto)
 
         findViewById<View>(R.id.btnVoltar).setOnClickListener { finish() }
         findViewById<View>(R.id.button2).setOnClickListener { finish() }

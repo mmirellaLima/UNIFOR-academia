@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rec_azul">#FF0047FF</color>
+    <color name="rec_botao">#FF161B93</color>
+    <color name="rec_borda">#FFD9D9D9</color>
+</resources>

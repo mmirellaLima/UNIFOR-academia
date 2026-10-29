@@ -75,7 +75,7 @@ class MainActivity : ComponentActivity() {
                             "welcome" -> ApresentacaoScreen(onLogin = { page = "login" }, onCadastro = { page = "register" })
                             "register" -> CadastroScreen(vm) { page = "age" }
                             "login" -> LoginScreen(onEntrar = { chooseRole = true },
-                                onEsqueceuSenha = { AppNavigation.pending(this@MainActivity, PendingDestination.RECOVERY) })
+                                onEsqueceuSenha = { AppNavigation.recovery(this@MainActivity) })
                             "age" -> IdadeScreen(vm, onVoltar = { back() }, onAvancar = { page = "weight" })
                             "weight" -> PesoScreen(vm, onVoltar = { back() },
                                 onAvancar = { AppNavigation.setup(this@MainActivity, SetupStep.HEIGHT) })

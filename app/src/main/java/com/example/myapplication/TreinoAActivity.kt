@@ -1,14 +1,16 @@
 package com.example.myapplication
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplication.navigation.AppNavigation
 
-class TreinoAActivity : AppCompatActivity() {
+class TreinoAActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -18,6 +20,9 @@ class TreinoAActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Titulo vem do Meus treinos / Feed ("Treino A", "Treino B"...)
+        intent.getStringExtra("treino")?.let { findViewById<TextView>(R.id.tvTitulo).text = it }
 
         findViewById<View>(R.id.btnVoltar).setOnClickListener { finish() }
 

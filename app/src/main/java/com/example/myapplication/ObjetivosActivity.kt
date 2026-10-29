@@ -12,7 +12,7 @@ import com.example.myapplication.navigation.AppNavigation
 import com.example.myapplication.navigation.DemoSession
 import com.example.myapplication.navigation.PendingDestination
 
-class ObjetivosActivity : AppCompatActivity() {
+class ObjetivosActivity : BaseActivity() {
 
     private val selectedGoals = mutableSetOf<String>()
 
@@ -71,7 +71,7 @@ class ObjetivosActivity : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.btnAcessibilidade).setOnClickListener {
-            AppNavigation.pending(this, PendingDestination.FONT_SIZE)
+            abrirMenuAcessibilidade()
         }
     }
 }
