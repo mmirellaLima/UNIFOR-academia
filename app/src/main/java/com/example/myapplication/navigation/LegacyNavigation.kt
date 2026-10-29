@@ -36,9 +36,7 @@ object LegacyNavigation {
                 tint(item, color, labels[index], administrator && index == 1)
             }
         }
-        activity.findViewById<View>(R.id.btnFonte)?.setOnClickListener {
-            AppNavigation.pending(activity, PendingDestination.FONT_SIZE)
-        }
+        FontAccessibility.bind(activity)
     }
     private fun tint(view: View, color: Int, label: String, agenda: Boolean) {
         when (view) {

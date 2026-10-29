@@ -45,9 +45,7 @@ class FeedActivity : AppCompatActivity() {
         }
         bindClass("jiu", R.id.feed_jiu_action, R.id.feed_jiu_seats, 5, false)
         bindClass("pilates", R.id.feed_pilates_action, R.id.feed_pilates_seats, 4, true)
-        findViewById<View>(R.id.feed_font).setOnClickListener {
-            AppNavigation.pending(this, PendingDestination.FONT_SIZE)
-        }
+        com.example.myapplication.navigation.FontAccessibility.bind(this, R.id.feed_font)
         AppNavigation.dashboardBack(this)
     }
 

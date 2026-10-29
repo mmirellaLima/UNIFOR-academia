@@ -57,12 +57,7 @@ class AdminAgendaActivity : AppCompatActivity() {
             }
         }
 
-        findViewById<View>(R.id.accessibility_action)?.setOnClickListener {
-            val content = findViewById<View>(R.id.screen_content)
-            val enlarged = !content.isSelected
-            content.isSelected = enlarged
-            resizeText(content, if (enlarged) 1.2f else 1f / 1.2f)
-        }
+        com.example.myapplication.navigation.FontAccessibility.bind(this, R.id.accessibility_action)
 
         setupBottomNavigation()
     }

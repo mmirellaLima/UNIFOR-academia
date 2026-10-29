@@ -61,9 +61,7 @@ class FeedAdministradorActivity : AppCompatActivity() {
         findViewById<View>(R.id.admin_nav_agenda).setOnClickListener {
             startActivity(Intent(this, AdminAgendaActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
         }
-        findViewById<View>(R.id.admin_accessibility_badge).setOnClickListener {
-            AppNavigation.pending(this, PendingDestination.FONT_SIZE)
-        }
+        com.example.myapplication.navigation.FontAccessibility.bind(this, R.id.admin_accessibility_badge)
         AppNavigation.dashboardBack(this)
     }
 
