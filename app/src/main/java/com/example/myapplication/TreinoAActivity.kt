@@ -31,14 +31,12 @@ class TreinoAActivity : BaseActivity() {
         findViewById<View>(R.id.cardExercicio3).setOnClickListener { abrirExercicio("Desenvolvimento de ombros") }
         findViewById<View>(R.id.cardConcluido1).setOnClickListener { abrirExercicio("Desenvolvimento de ombros") }
 
-        // Barra inferior: 0 Inicio, 1 Progresso, 2 logo (chat), 3 Treinos, 4 Perfil
-        val barra = findViewById<ViewGroup>(R.id.barraInferior)
-        barra.getChildAt(0).setOnClickListener { AppNavigation.home(this) }
-        barra.getChildAt(1).setOnClickListener { AppNavigation.progress(this) }
-        barra.getChildAt(2).setOnClickListener { AppNavigation.chat(this) }
-        barra.getChildAt(3).setOnClickListener { AppNavigation.workouts(this) }
-        barra.getChildAt(4).setOnClickListener { AppNavigation.profile(this) }
+        com.example.myapplication.navigation.LegacyNavigation.bind(this, 3)
     }
 
-    private fun abrirExercicio(nome: String) = AppNavigation.exercise(this, nome)
+    private fun abrirExercicio(nome: String) {
+        val intent = Intent(this, ExercicioSeletActivity::class.java)
+        intent.putExtra("nome", nome)
+        startActivity(intent)
+    }
 }

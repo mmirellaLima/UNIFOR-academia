@@ -11,8 +11,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.example.myapplication.R
+import com.example.myapplication.BaseActivity
 
-class FeedActivity : AppCompatActivity() {
+class FeedActivity : BaseActivity() {
     private val classRenderers = mutableListOf<() -> Unit>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,16 +27,8 @@ class FeedActivity : AppCompatActivity() {
             insets
         }
         findViewById<View>(R.id.feed_back).setOnClickListener { onBackPressedDispatcher.onBackPressed() }
-        findViewById<View>(R.id.feed_start).setOnClickListener { AppNavigation.workout(this, "Treino A") }
-        findViewById<View>(R.id.feed_nav_training).setOnClickListener { AppNavigation.workouts(this) }
-        findViewById<View>(R.id.feed_nav_profile).setOnClickListener { AppNavigation.profile(this) }
-        findViewById<View>(R.id.feed_nav_chat).setOnClickListener { AppNavigation.chat(this) }
-        findViewById<View>(R.id.feed_nav_home).setOnClickListener {
-            findViewById<androidx.core.widget.NestedScrollView>(R.id.feed_scroll).smoothScrollTo(0, 0)
-        }
-        findViewById<View>(R.id.feed_nav_progress).setOnClickListener {
-            AppNavigation.progress(this)
-        }
+       findViewById<View>(R.id.feed_start).setOnClickListener { AppNavigation.workout(this, "Treino A") }
+        LegacyNavigation.bind(this, 0, R.id.feed_nav)
         listOf(R.id.feed_bench_card to R.string.feed_bench,
             R.id.feed_curl_card to R.string.feed_curl,
             R.id.feed_shoulder_card to R.string.feed_shoulder).forEach { (id, title) ->

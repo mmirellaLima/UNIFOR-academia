@@ -244,35 +244,14 @@ private fun TreinoAnterior(nome: String, @DrawableRes imagem: Int, onClick: () -
 
 @Composable
 private fun BarraInferior(onInicio: () -> Unit, onTreinos: () -> Unit, onPerfil: () -> Unit, onChat: () -> Unit) {
-    Column(Modifier.fillMaxWidth().background(AppColors.Background)) {
-        HorizontalDivider(color = AppColors.Primary.copy(alpha = 0.4f))
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .navigationBarsPadding()
-                .padding(vertical = 8.dp, horizontal = 8.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            ItemBarra(Icons.Default.Home, "Início", false, onInicio)
-            ItemBarra(Icons.Default.ShowChart, "Progresso", true) {}
-            Box(
-                Modifier.clickable(onClick = onChat).size(56.dp).border(2.dp, Color(0xFF2EC4B6), CircleShape).background(AppColors.ButtonDark, CircleShape),
-                contentAlignment = Alignment.Center
-            ) {
-                Image(painterResource(R.drawable.logo_chat), "MoemIA Fit", Modifier.size(34.dp))
-            }
-            ItemBarra(Icons.Default.FitnessCenter, "Treinos", false, onTreinos)
-            ItemBarra(Icons.Default.Person, "Perfil", false, onPerfil)
+    androidx.compose.ui.viewinterop.AndroidView(
+        modifier = Modifier.fillMaxWidth().navigationBarsPadding(),
+        factory = { context ->
+            android.view.LayoutInflater.from(context).inflate(R.layout.flow_bottom_navigation, null) as android.view.ViewGroup
+        },
+        update = { bar ->
+            com.example.myapplication.navigation.LegacyNavigation.bindBar(
+                bar, 1, listOf(onInicio, {}, onChat, onTreinos, onPerfil))
         }
-    }
-}
-
-@Composable
-private fun ItemBarra(icone: ImageVector, rotulo: String, ativo: Boolean, onClick: () -> Unit) {
-    val cor = if (ativo) AzulClaro else Color.White
-    Column(Modifier.clickable { onClick() }.padding(4.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-        Icon(icone, rotulo, tint = cor, modifier = Modifier.size(24.dp))
-        Text(rotulo, color = cor, fontSize = 11.sp)
-    }
+    )
 }
