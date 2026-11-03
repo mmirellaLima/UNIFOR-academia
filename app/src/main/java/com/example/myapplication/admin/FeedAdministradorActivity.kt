@@ -12,7 +12,7 @@ import com.example.myapplication.R
 import com.example.myapplication.navigation.*
 
 /** Presentation of the administrator feed and its prototype transitions. */
-class FeedAdministradorActivity : com.example.myapplication.BaseActivity() {
+class FeedAdministradorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
