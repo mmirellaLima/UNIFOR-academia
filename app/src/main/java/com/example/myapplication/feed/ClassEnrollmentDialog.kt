@@ -34,8 +34,7 @@ class ClassEnrollmentDialog : DialogFragment() {
         confirm.backgroundTintList = android.content.res.ColorStateList.valueOf(
             Color.parseColor(if (leaving) "#B93630" else "#3E46F4"))
         content.findViewById<View>(R.id.feed_enrollment_check).visibility = if (leaving) View.VISIBLE else View.GONE
-        val preferences = requireContext().getSharedPreferences("feed_accessibility", android.content.Context.MODE_PRIVATE)
-        val scale = 1f + preferences.getInt("font_progress", 0).coerceIn(0, 50) / 100f
+        val scale = com.example.myapplication.AcessibilidadePrefs.getEscala(requireContext())
         scaleText(content, scale)
         content.findViewById<View>(R.id.feed_enrollment_cancel).setOnClickListener { dismiss() }
         content.findViewById<View>(R.id.feed_enrollment_confirm).setOnClickListener { button ->
