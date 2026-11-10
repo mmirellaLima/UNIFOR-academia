@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "324336462482",
+    "project_id": "academiaunifordb",
+    "storage_bucket": "academiaunifordb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324336462482:android:e411ae6b767c3c87c9944b",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd2yL08cCJ77EmVagg0TlW1Zy9pmYlMWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
