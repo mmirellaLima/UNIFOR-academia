@@ -10,8 +10,6 @@ import androidx.lifecycle.LifecycleOwner
 import com.example.myapplication.R
 import com.example.myapplication.AcessibilidadePrefs
 import kotlin.math.roundToInt
-
-/** Um único ajuste de fonte para todos os botões de acessibilidade em telas XML. */
 class FontAccessibility private constructor(
     private val activity: AppCompatActivity,
     private val root: ViewGroup,
@@ -78,13 +76,26 @@ class FontAccessibility private constructor(
             override fun onStopTrackingTouch(seekBar: android.widget.SeekBar?) = Unit
         })
         content.findViewById<View>(R.id.feed_font_close).setOnClickListener { popup.dismiss() }
+
+        // O "aA" vira "×" enquanto o painel está aberto.
+        val icone = anchor as? android.widget.ImageView
+        val iconeOriginal = icone?.drawable
+        icone?.setImageResource(R.drawable.ic_fechar_fonte)
+
         popup.setOnDismissListener {
             fontPopup = null
+            if (icone != null && iconeOriginal != null) icone.setImageDrawable(iconeOriginal)
             anchor.requestFocus()
         }
-        popup.showAtLocation(root, android.view.Gravity.END or android.view.Gravity.CENTER_VERTICAL,
-            root.paddingRight + margin, 0)
-        content.findViewById<View>(R.id.feed_font_close).requestFocus()
+        val posicaoBotao = IntArray(2)
+        val posicaoRaiz = IntArray(2)
+        anchor.getLocationInWindow(posicaoBotao)
+        root.getLocationInWindow(posicaoRaiz)
+        val folga = (8 * activity.resources.displayMetrics.density).toInt()
+        val distanciaDoFundo = root.height - (posicaoBotao[1] - posicaoRaiz[1]) + folga
+        val distanciaDaDireita = root.width - (posicaoBotao[0] - posicaoRaiz[0] + anchor.width)
+        popup.showAtLocation(root, android.view.Gravity.BOTTOM or android.view.Gravity.END,
+            distanciaDaDireita, distanciaDoFundo)
     }
 
 

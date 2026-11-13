@@ -338,6 +338,16 @@
                             android:text="@string/ob_meu_treino_description"
                             android:textColor="@color/ob_text_secondary"
                             android:textSize="12sp" />
+                        <ImageView
+                            android:id="@+id/btnFonte"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="top"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_fab_fonte"
+                            android:contentDescription="Tamanho da fonte"
+                            android:padding="7dp"
+                            android:src="@drawable/ic_fonte" />
                     </LinearLayout>
                 </LinearLayout>
                 <androidx.appcompat.widget.AppCompatButton
