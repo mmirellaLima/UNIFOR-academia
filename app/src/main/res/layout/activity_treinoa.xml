@@ -441,12 +441,14 @@
                         android:layout_height="24dp"
                         android:contentDescription="Abrir exercício"
                         android:src="@drawable/ic_chevron" />
+
+
+
                 </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <View
         android:id="@+id/linhaBarra"
@@ -457,6 +459,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
+    <ImageView
+        android:id="@+id/btnFonte"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="88dp"
+        android:background="@drawable/bg_fab_fonte"
+        android:contentDescription="Tamanho da fonte"
+        android:padding="8dp"
+        android:src="@drawable/ic_fonte"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <include layout="@layout/flow_bottom_navigation" android:id="@+id/barraInferior" android:layout_width="0dp" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" />
 

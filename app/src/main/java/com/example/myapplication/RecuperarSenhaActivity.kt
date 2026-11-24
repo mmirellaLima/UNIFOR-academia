@@ -11,7 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.doAfterTextChanged
 
-class RecuperarSenhaActivity : AppCompatActivity() {
+class RecuperarSenhaActivity : com.example.myapplication.BaseActivity() {
 
     private var enviado = false
 

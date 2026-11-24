@@ -13,6 +13,7 @@ import com.example.myapplication.admin.AdminWorkoutsActivity
 import com.example.myapplication.feed.FeedActivity
 import com.example.myapplication.onboarding.*
 import com.example.myapplication.questionario2.*
+import com.example.myapplication.abrirMenuAcessibilidade
 
 /** The only bridge between the teammates' Compose screens and XML activities. */
 object AppNavigation {
@@ -32,6 +33,10 @@ object AppNavigation {
         activity.startActivity(Intent(activity, destination).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
     }
     fun pending(activity: Activity, destination: PendingDestination, selection: String? = null) {
+        if (destination == PendingDestination.FONT_SIZE && activity is androidx.appcompat.app.AppCompatActivity) {
+            activity.abrirMenuAcessibilidade()
+            return
+        }
         activity.startActivity(Intent(activity, PendingActivity::class.java)
             .putExtra("destination", destination.name).putExtra("selection", selection))
     }
