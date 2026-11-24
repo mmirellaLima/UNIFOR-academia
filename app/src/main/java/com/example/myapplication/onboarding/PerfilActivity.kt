@@ -12,10 +12,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.example.myapplication.ObjetivosActivity
+import com.example.myapplication.ObjetivosRepository
 import com.example.myapplication.R
 import com.example.myapplication.navigation.*
 
-class PerfilActivity : AppCompatActivity() {
+class PerfilActivity : com.example.myapplication.BaseActivity() {
 
     private lateinit var layoutVazio: View
     private lateinit var layoutLista: View
@@ -77,6 +78,12 @@ class PerfilActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         renderObjectives()
+        ObjetivosRepository.carregar { goals ->
+            if (goals != null) {
+                DemoSession(this).objectives = goals.toMutableSet()
+                renderObjectives()
+            }
+        }
     }
 
     private fun renderObjectives() {

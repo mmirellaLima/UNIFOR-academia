@@ -67,6 +67,7 @@ class ObjetivosActivity : BaseActivity() {
 
         findViewById<View>(R.id.btnSalvarObjetivos).setOnClickListener {
             session.objectives = selectedGoals
+            ObjetivosRepository.salvar(selectedGoals)
             finish()
         }
 
