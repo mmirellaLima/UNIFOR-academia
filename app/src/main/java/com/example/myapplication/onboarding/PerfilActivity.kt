@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.example.myapplication.ObjetivosActivity
+import com.example.myapplication.ObjetivosRepository
 import com.example.myapplication.R
 import com.example.myapplication.navigation.*
 
@@ -77,6 +78,12 @@ class PerfilActivity : com.example.myapplication.BaseActivity() {
     override fun onResume() {
         super.onResume()
         renderObjectives()
+        ObjetivosRepository.carregar { goals ->
+            if (goals != null) {
+                DemoSession(this).objectives = goals.toMutableSet()
+                renderObjectives()
+            }
+        }
     }
 
     private fun renderObjectives() {
